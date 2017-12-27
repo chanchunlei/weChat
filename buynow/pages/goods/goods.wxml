@@ -1,0 +1,103 @@
+<view class="container">
+  <!--搜索  -->
+  <view class="page__bd">
+    <view class='logo'><image mode="aspectFill" src='/images/logo.png'></image></view>
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__label" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">搜索商品或关键词</view>
+      </view>
+    </view>
+  </view>
+  <!--筛选条件  -->
+  <view class='nav'>
+    <view class='multiple'>综合</view>
+    <view class='price_sort'>价格
+      <text class="iconfont icon-sanjiaoxing"></text>
+      <text class="iconfont icon-sanjiaoxing-copy"></text> 
+    </view>
+    <view class='more_kinds'>更多
+      <text class="iconfont icon-down-trangle-copy-copy-copy"></text>
+    </view>
+    <view class='screen'>筛选
+      <text class="iconfont icon-down-trangle-copy-copy-copy"></text>
+    </view>
+  </view>
+  <!--弹框  -->
+  <!--更多弹窗  -->
+    <view class='more_model'>
+        <text>智能排序</text>
+        <text>商品编码：从小到大</text>
+        <text>商品编码：从大到小</text>
+        <text>商品编码：从A到Z</text>
+        <text>商品编码：从Z到A</text>
+        <text>最新上架优先</text>
+    </view>
+    <!--筛选弹窗  -->
+    <view class='screen_model'>
+      <checkbox-group bindchange="checkboxChange">
+        <label class="checkbox" wx:for="{{items}}">
+          <checkbox value=""/>
+        </label>
+      </checkbox-group>
+    </view>
+    <view></view>
+    <!--list  -->
+    <scroll-view class='list_box'>
+       <!--连接数据后循环渲染  -->
+      <view class='list_content'>
+          <view class='images_content'>
+            <image mode="aspectFit" src='/images/iphoneX.png'></image>
+          </view>
+          <view class='msg_content'>
+            <text class='msg_title'>【示例商品】Apple IphoneX</text>
+            <text class='spec'>2个规格可选</text>
+            <view class='prise_box'>
+              <text class='RMB'>￥</text><text class='prise'>8888</text>
+            </view>
+            <text class="iconfont icon-jiaru"></text> 
+          </view>
+      </view>
+      <view class='list_content'>
+          <view class='images_content'>
+            <image mode="aspectFit" src='/images/iphoneX.png'></image>
+          </view>
+          <view class='msg_content'>
+            <text class='msg_title'>【示例商品】Apple IphoneX</text>
+            <text class='spec'>2个规格可选</text>
+            <view class='prise_box'>
+              <text class='RMB'>￥</text><text class='prise'>8888</text>
+            </view>
+            <text class="iconfont icon-jiaru"></text> 
+          </view>
+      </view>
+      <view class='list_content'>
+          <view class='images_content'>
+            <image mode="aspectFit" src='/images/iphoneX.png'></image>
+          </view>
+          <view class='msg_content'>
+            <text class='msg_title'>【示例商品】Apple IphoneX</text>
+            <text class='spec'>2个规格可选</text>
+            <view class='prise_box'>
+              <text class='RMB'>￥</text><text class='prise'>8888</text>
+            </view>
+            <text class="iconfont icon-jiaru"></text> 
+          </view>
+      </view>
+      <view class='list_content'>
+          <view class='images_content'>
+            <image mode="aspectFit" src='/images/iphoneX.png'></image>
+          </view>
+          <view class='msg_content'>
+            <text class='msg_title'>【示例商品】Apple IphoneX</text>
+            <text class='spec'>2个规格可选</text>
+            <view class='prise_box'>
+              <text class='RMB'>￥</text><text class='prise'>8888</text>
+            </view>
+            <text class="iconfont icon-jiaru"></text> 
+          </view>
+      </view>
+    </scroll-view>
+
+
+</view>
