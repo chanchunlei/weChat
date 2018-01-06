@@ -1,1 +1,195 @@
-/* pages/shopcar/shopcar.wxss */
+@font-face {
+  font-family: 'iconfont';  /* project id 521615 */
+  src: url('//at.alicdn.com/t/font_521615_2o92ivgyi2sdobt9.eot');
+  src: url('//at.alicdn.com/t/font_521615_2o92ivgyi2sdobt9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_521615_2o92ivgyi2sdobt9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_521615_2o92ivgyi2sdobt9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_521615_2o92ivgyi2sdobt9.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-shanchu:before { content: "\e605"; }
+
+.container{
+  background-color: #eeeeee;
+}
+/*checkbox  */
+.shopcar{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: #ffffff;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+}
+.check_box{
+  width: 10%;
+  height: 250rpx;
+  line-height: 250rpx;
+  text-align: center;
+}
+.check_box>label{
+  text-align: center;
+}
+/*修改默认样式  */
+checkbox .wx-checkbox-input{
+   border-radius: 8rpx;
+   width: 35rpx;
+   height: 35rpx;
+   margin: 0;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+   border-color: #cbe9fc;
+   background: #1e9cf9;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+   border-radius: 50%;
+   width: 35rpx;
+   height: 35rpx;
+   line-height: 35rpx;
+   text-align: center;
+   font-size:30rpx;
+   color:#fff;
+   background: transparent;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+}
+/*imgbox  */
+.img_box{
+  width: 25%;
+  height: 250rpx;
+  text-align: center;
+}
+.img_box>image{
+  width: 100%;
+  height: 100%;
+}
+/*msgbox  */
+.msg_box{
+  width: 65%;
+  height: 240rpx;
+  position: relative;
+}
+.msg_box>text{
+  display: block;
+}
+.msg_title{
+  font-size: 35rpx;
+  font-weight: 700;
+  color: #676767;
+  width: 100%;
+  height: 50rpx;
+  white-space:nowrap;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+.spec{
+  width: 100%;
+  font-size: 27rpx;
+  color: #959595;
+  padding: 5rpx 0;
+  box-sizing: border-box;
+}
+.prise_box{
+   width: 100%;
+   height: 45rpx;
+   line-height: 45rpx;
+ }
+ .RMB{
+   font-size: 25rpx;
+   font-weight: 700;
+   color: #ff7910;
+ }
+ .prise{
+   font-size: 35rpx;
+   font-weight: 700;
+   color: #ff7910;
+ }
+ .changeNum{
+   display: flex;
+   justify-content: space-between;
+ }
+/*加减框  */
+.stepper {
+	border: 3rpx solid #ccc;
+	border-radius: 10rpx;
+	width: 166rpx;
+	height: 50rpx;
+}
+.stepper text {
+	width: 50rpx;
+	line-height: 50rpx;
+	text-align: center;
+	float: left;
+}
+.stepper input {
+	color: black;
+	float: left;
+	margin: 0 auto;
+	width: 60rpx;
+	height: 50rpx;
+	text-align: center;
+	font-size: 25rpx;
+	border-left: 3rpx solid #ccc;
+	border-right: 3rpx solid #ccc;
+}
+/*普通样式*/
+.stepper .normal{
+	color: black;
+}
+
+/*禁用样式*/
+.stepper .disabled{
+	color: #ccc;
+}
+.changeNum>.icon-shanchu{
+  margin-right: 30rpx; 
+}
+/*底部结算  */
+.balance{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 120rpx;
+  line-height: 120rpx;
+  background-color: #fff;
+  border-top: 1rpx solid #bebebe;
+}
+.all_goods{
+  font-size: 27rpx;
+  color: #b5b5b5;
+  text-align: center;
+  float: left;
+  width: 25%;
+}
+.all_money{
+  width: 50%;
+  text-align: right;
+  float: left;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+}
+.all_money>text:first-child{
+  font-size: 35rpx;
+  font-weight: 500;
+  color: #636363;
+}
+.all_money>text:last-child{
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #f37b16;
+}
+.pay_money{
+  float: right;
+  width: 25%;
+  text-align: center;
+  background-color: #219dfa;
+  color: #fff;
+  font-size: 35rpx;
+}

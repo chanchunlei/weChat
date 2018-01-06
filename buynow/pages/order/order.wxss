@@ -1,1 +1,47 @@
-/* pages/order/order.wxss */
+.container{
+  background-color: #eeeeee;
+  padding-top: 1rpx;
+}
+.order_box{
+  width: 100%;
+  margin-top: 20rpx;
+  background-color: #ffffff;
+  padding: 40rpx 40rpx 0;
+  box-sizing: border-box;
+}
+.msg_order{
+  border-bottom: 2rpx solid #e9e9e9;
+  width: 100%;
+}
+.ordernumber{
+  width: 100%;
+  font-size: 35rpx;
+  font-weight: 700;
+  color: #626262;
+  display: flex;
+  line-height: 85rpx;
+  justify-content: space-between;
+}
+.ordernumber>text:last-child{
+  font-weight: 500;
+  color: #1899f0;
+}
+.num,.time,.sum{
+  width: 100%;
+  font-size: 33rpx;
+  color: #979797;
+  line-height: 60rpx;
+}
+.paybutton{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: right;
+}
+.paymoney,.buyagain{
+   width: 200rpx;
+   height: 100rpx;
+}
+.paymoney{
+  margin-right: 30rpx;
+}
