@@ -1,0 +1,41 @@
+<view class='container'>
+   <view class='percent_box'>
+     <view class='shops_price'>
+      <text>商品商铺价格</text> 
+     </view>
+     <view class='check'>
+       <view>
+         <checkbox-group><checkbox checked='true'/>市场价\t x \t</checkbox-group>
+         <input placeholder-style="color: #333;" class='percent_inp' type='number' placeholder='100'/>%
+       </view>
+       <view>
+         <checkbox-group><checkbox/>订货价\t x \t</checkbox-group>
+         <input placeholder-style="color: #666;" class='percent_inp' type='number' placeholder='100'/>%
+       </view>
+       <view>
+         <checkbox-group><checkbox/>不显示价格</checkbox-group>
+       </view>
+     </view>
+   </view>
+   <!--店铺信息  -->
+   <view class='shops_infor'>
+      <view class='expert border_line'>
+        <text>店铺名称</text>
+        <text class='font_style'>百脑汇</text>
+      </view>
+      <view class='expert border_line'>
+        <text>联系人</text>
+        <text class='font_style'>百脑汇</text>
+      </view>
+      <view class='expert'>
+        <text>电话</text>
+        <text class='font_style'>13569910687</text>
+      </view>
+   </view>
+
+
+   <!--保存  -->
+    <view class='keep'>
+      保存
+    </view>
+</view>

@@ -1,0 +1,49 @@
+page{
+  background-color: #eeeeee;
+}
+.base_box{
+  width: 100%;
+  font-size: 35rpx;
+  color: #333;
+}
+.expert{
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #666;
+  width: 100%;
+  padding: 0 35rpx;
+  box-sizing: border-box;
+}
+.base_msg{
+  width: 100%;
+  padding: 0 35rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.layout{
+  display: flex;
+  justify-content: space-between;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.border{
+   border-bottom: 3rpx solid #eee;
+}
+.font_size{
+  font-size: 30rpx;
+  color: #949494;
+}
+/*保存  */
+/*支付  */
+.btn{
+  width: 100%;
+  margin: 15rpx 0;
+}
+.btn>button{
+  background-color: #219dfa;
+  color: #ffffff;
+}
+.button-hover {
+  opacity: 0.8;
+}
+

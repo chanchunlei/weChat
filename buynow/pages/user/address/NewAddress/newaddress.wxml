@@ -1,0 +1,32 @@
+<view class='container'>
+  <view class='inp_address'>
+    <view class='expert'>
+      <text>客户名称</text>
+      <text class='font_style'>请输入</text>
+    </view>
+    <view class='expert'>
+      <text>联系人</text>
+      <text class='font_style'>姓名</text>
+    </view>
+    <view class='expert'>
+      <text>联系方式</text>
+      <text class='font_style'>电话号码</text>
+    </view>
+    <view class='expert'>
+      <text>省/市/区</text>
+      <text class='font_style'>选择省市区</text>
+    </view>
+    <view class='expert'>
+      <text>详细信息</text>
+      <text class='font_style'>请输入</text>
+    </view>
+    <view class='expert'>
+      <text>设为默认地址</text>
+      <checkbox-group><checkbox/></checkbox-group>
+    </view>
+  </view>
+  <!--保存  -->
+   <view class='keep'>
+     保存
+   </view>
+</view>

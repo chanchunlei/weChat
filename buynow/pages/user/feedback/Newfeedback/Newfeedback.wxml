@@ -1,0 +1,17 @@
+<view class='container'> 
+  <view class="section">
+    <textarea placeholder="请输入反馈意见" placeholder-style="color: #999;"  />
+  </view>
+  <view class='add_news'>
+    <view>
+      <text class='iconfont icon-jiaru'>添加附件</text>
+    </view>
+    <view>
+      <text class='iconfont icon-down-trangle-copy-copy-copy-copy'></text>
+    </view>
+  </view>
+  <!--发送  -->
+  <view class='send'>
+    发送
+  </view>
+</view>

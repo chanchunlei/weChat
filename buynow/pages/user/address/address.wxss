@@ -1,0 +1,64 @@
+page{
+  background-color: #eee;
+}
+.address_box{
+  background-color: #fff;
+  padding: 0 35rpx;
+  box-sizing: border-box;
+}
+.address_name{
+  padding: 30rpx 0;
+  font-size: 35rpx;
+  color: #333;
+  border-bottom: 3rpx solid #eee;
+}
+.font_color{
+  color: #666;
+}
+.margin_right{
+  margin-right: 25rpx;
+}
+.revise{
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 35rpx;
+  color: #999;
+}
+/*修改默认样式  */
+checkbox .wx-checkbox-input{
+   border-radius: 8rpx;
+   width: 35rpx;
+   height: 35rpx;
+   margin: 0 15rpx 4rpx 0;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+   border-color: #cbe9fc;
+   background: #1e9cf9;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+   border-radius: 50%;
+   width: 35rpx;
+   height: 35rpx;
+   line-height: 35rpx;
+   text-align: center;
+   font-size:30rpx;
+   color:#fff;
+   background: transparent;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+}
+/*新增地址  */
+.new_address{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 40rpx;
+  text-align: center;
+  color: #fff;
+  background-color: #219dfa;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}

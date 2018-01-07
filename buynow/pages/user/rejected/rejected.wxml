@@ -1,0 +1,7 @@
+<view class='container'>
+ <view class='return_msg'>
+   <view class='return_img'><image mode='aspectFit' src='/images/mark.png'></image></view>
+   <view class='return_con'>暂无数据</view>
+ </view>
+
+</view>

@@ -1,0 +1,47 @@
+<view class='container'>
+  <checkbox-group bindchange="checkboxChange">
+    <view class='shopcar'>
+      <view class='check_box'>
+        <label class="checkbox">
+          <checkbox value="1"/>
+        </label>
+      </view>
+      <view bindtap='showDetail' class='img_box'>
+        <image mode='aspectFit' src='/images/iphoneX.png'></image> 
+      </view>
+      <view class='msg_box'>
+        <view bindtap='showDetail'>
+          <text class='msg_title'>【示例商品】Apple IphoneX asdfasdfasdf</text>
+          <text class='spec'>颜色：暗灰\n存储容量：64G</text>
+          <view class='prise_box'>
+            <text class='RMB'>￥</text><text class='prise'>8888</text>
+          </view>
+        </view>
+        <view class='changeNum'>
+          <view class="stepper">
+            <!-- 减号 -->
+            <text class="{{minusStatuses[index]}}" data-index="{{index}}" bindtap="bindMinus">-</text>
+            <!-- 数值 -->
+            <input type="number" bindchange="bindManual" value="1" />
+            <!-- 加号 -->
+            <text class="normal" data-index="{{index}}" bindtap="bindPlus">+</text>
+          </view>
+          <text class="iconfont icon-shanchu"></text> 
+        </view>
+      </view>
+    </view>
+  </checkbox-group> 
+  <!--结算  -->
+  <view class='balance'>
+     <view class='all_goods'>
+      <text>共1款，总数1</text>
+     </view>
+     <view class='all_money'>
+      <text>金额：</text>
+      <text>8888.00</text>
+     </view>
+     <view bindtap='FillIn' class='pay_money'>
+      <text>下单</text>
+     </view>
+  </view>
+</view>

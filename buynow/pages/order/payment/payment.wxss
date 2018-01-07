@@ -1,0 +1,85 @@
+/*引用小图标  */
+.icon-weixinzhifu1:before { content: "\e639"; font-size: 80rpx; color: #00b700;}
+.icon-down-trangle-copy-copy-copy-copy:before { content: "\e83e"; }
+
+
+.container{
+  background-color: #eeeeee;
+}
+.amount_box,.pay_type,.pay_kind,.account_num,.remark,.appendix{
+  width: 100%;
+  padding: 0 35rpx;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  font-size: 35rpx;
+  color: #666; 
+}
+/*订单金额  */
+.amount_box>view{
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.amount_box>view:first-child{
+  border-bottom: 3rpx solid #eee;
+}
+/*支付方式  */
+.pay_type,.account_num,.appendix{
+  margin: 15rpx 0;
+}
+.pay_type>text{
+  display: block;
+}
+.pay_type>text{
+  height: 100rpx;
+  line-height: 100rpx;
+}
+/*支付金额  */
+.pay_kind>view{
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.pay_kind>view:first-child{
+  border-bottom: 3rpx solid #eee;
+}
+/*收款账号  */
+.account_title{
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.account_msg>text{
+  display: block;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  color: #b3b3b3;
+}
+/*备注  */
+.remark,.appendix{
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.p_inp{
+  font-size: 30rpx;
+  color: #b3b3b3;
+}
+/*支付  */
+.btn{
+  width: 100%;
+  margin-bottom: 15rpx;
+}
+.btn>button{
+  background-color: #219dfa;
+  color: #ffffff;
+}
+.button-hover {
+  opacity: 0.8;
+}
+

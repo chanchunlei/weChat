@@ -1,0 +1,35 @@
+<view class='container'>
+  <view class='amount_box'>
+    <view><text>订单金额</text><text>8888.00</text></view>
+    <view><text>待付金额</text><text>8888.00</text></view>
+  </view>
+  <view class='pay_type'>
+    <text>支付方式</text>
+    <text class='pay_imgs'>
+      <text class='iconfont icon-weixinzhifu1'></text>
+    </text>
+  </view>
+  <view class='pay_kind'>
+    <view><text>支付金额</text><text>8888.00</text></view>
+    <view><text>支付日期</text><text>2017-11-16 \t 13:56</text></view>
+  </view>
+  <view class='account_num'>
+    <view class='account_title'><text>收款账号</text><text class='iconfont icon-down-trangle-copy-copy-copy-copy'></text></view>
+    <view class='account_msg'>
+      <text>开户银行：123456</text>
+      <text>账户名称：123456</text>
+      <text>开户账号：123456</text>
+    </view>
+  </view>
+  <view class='remark'>
+    <text>备注</text>
+    <text class='p_inp'>请输入</text>
+  </view>
+  <view class='appendix'>
+    <text>附件</text>
+    <text class='p_inp'>请添加</text>
+  </view>
+  <view class='btn'>
+    <button>确认支付</button>
+  </view>
+</view>
