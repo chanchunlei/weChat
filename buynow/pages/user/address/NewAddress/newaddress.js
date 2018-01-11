@@ -12,9 +12,14 @@ Page({
     allprovince:[],
     allcity:[],
     allarea:[],
-    province:[],
     city:[],
-    area:[]
+    area:[],
+    value: [0, 0, 0],
+    isFalse: false,
+    chooseP: '北京市',
+    chooseC: '东城区',
+    chooseA: '',
+    numbers: 0
   },
   formSubmit: function (e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
@@ -73,21 +78,54 @@ Page({
     });
   },
   showModel: function () {
-    var num = this.data.allprovince[0].cidx
+    //省默认渲染，点击后Model显示，默认选取北京市全部渲染
+    var num = this.data.allprovince[0].cidx;
     var city = this.data.allcity.slice(num[0], num[1]+1);
-    this.setData({city});
+    var isFalse = !this.data.isFalse
+    this.setData({city, isFalse});
   },
-  bindChange: function (e) {
-    const val = e.detail.value;
+  bindChange: function (e) {//三级联动滚动
+    
+    var val = e.detail.value;
+    if (this.data.numbers[0] != val[0]){
+       var val = [val[0],0,0]
+    } else if (this.data.numbers[1] != val[1]){
+       var val = [val[0], val[1], 0]
+    }
     var num = this.data.allprovince[val[0]].cidx
-    var city = this.data.allcity.slice(num[0], num[1] + 1);
+    var city = this.data.allcity.slice(num[0], num[1] + 1);//取出对应市
     var areanum = city[val[1]].cidx
     if(areanum){
-      var area = this.data.allarea.slice(areanum[0], areanum[1] + 1);
+      var area = this.data.allarea.slice(areanum[0], areanum[1] + 1);//取出对应区
     }else{
       var area = [];
     }
-    this.setData({ city,area });
+    //input显示效果
+    var chooseP = this.data.allprovince[val[0]].fullname;
+    var chooseC = city[val[1]].fullname;
+    if (!area.length==0) {
+      var chooseA = area[val[2]].fullname;
+    }else{
+      var chooseA = "";
+    } 
+    var numbers = val;
+    this.setData({ city, area, chooseP, chooseC, chooseA, numbers});
+   // console.log(chooseC)
    // console.log(val)
+  },
+  open: function () {
+    var addressP = this.data.chooseP
+    var addressC = this.data.chooseC
+    var addressA = this.data.chooseA
+    var areaSelectedStr = addressP + addressC + addressA
+    var isFalse = false
+    //console.log(areaSelectedStr)
+    this.setData({
+      areaSelectedStr, isFalse
+    })
+  },
+  close: function () {
+    var isFalse = false
+    this.setData({ isFalse });
   }
 })

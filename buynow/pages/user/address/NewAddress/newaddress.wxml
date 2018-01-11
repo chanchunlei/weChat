@@ -24,7 +24,7 @@
       <view class='expert'>
         <text>省/市/区：</text>
         <view class='inp_box_city'>
-          <input bindtap='showModel' name='city' class='inps_address' type='text' value='{{areaSelectedStr}}' placeholder='选择省市区' placeholder-class='font_style'></input>
+          <input bindtap='showModel' name='city' class='inps_address' type='text' value='{{areaSelectedStr}}' placeholder='选择省市区' placeholder-class='font_style' focus='false'></input>
         </view>
         <text bindtap='fetchPOI' class='auto'>自动选择</text>
       </view>
@@ -35,7 +35,7 @@
           <input name='address' class='inps' type='text' value='' placeholder='请输入' placeholder-class='font_style'></input>
         </view>
       </view>
-      <view class='expert'>
+      <view class='expert flex_dif'>
         <text class='tolerate'>设为默认地址</text>
         <checkbox-group name='checkbox'><checkbox/></checkbox-group>
       </view>
@@ -47,21 +47,21 @@
     </view>
   </form> 
    <!--省市区联动  -->
-  <block wx:if="{{true}}">
+  <block wx:if="{{isFalse}}">
     <view class="citypicker">
-      <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
+      <picker-view indicator-style="height: 50px;" style="width: 100%; height: 500rpx;" value="{{val}}" bindchange="bindChange" mask-class="citybody">
         <view class="cityheader">
-          <view bindtap="open" class="city-cancel">取消</view>
+          <view bindtap="close" class="city-cancel">取消</view>
           <view bindtap="open" class="city-true">确定</view>
         </view>
         <picker-view-column>
-          <view wx:for="{{allprovince}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item.fullname}}</view>
+          <view wx:for="{{allprovince}}" wx:key="item" style="line-height: 50px;padding-left:20rpx;">{{item.fullname}}</view>
         </picker-view-column>
         <picker-view-column>
-          <view wx:for="{{city}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item.fullname}}</view>
+          <view wx:for="{{city}}" wx:key="item" style="line-height: 50px;padding-left:20rpx;">{{item.fullname}}</view>
         </picker-view-column>
         <picker-view-column>
-          <view wx:for="{{area}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item.fullname}}</view>
+          <view wx:for="{{area}}" wx:key="item" style="line-height: 50px;padding-left:20rpx;">{{item.fullname}}</view>
         </picker-view-column>
       </picker-view>
     </view>

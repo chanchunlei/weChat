@@ -6,6 +6,7 @@ page{
   padding: 0 35rpx;
   box-sizing: border-box;
 }
+/*详细信息  */
 .expert{
   min-height: 100rpx;
   line-height: 100rpx;
@@ -22,13 +23,18 @@ page{
   width: 73%;
 }
 .inp_box_city{
-  width: 60%;
+  width: 55%;
 }
-.auto{
+.expert>.auto{
+  font-size: 28rpx;
+  width: 20%;
   text-align: right;
 }
 .expert>.tolerate{
-  width: 30%;
+  width: 40%;
+}
+.flex_dif{
+  justify-content: space-between;
 }
 .inps{
   height: 100rpx;
@@ -76,7 +82,6 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
    -webkit-transform:translate(-50%, -50%) scale(1);
 }
 /*保存  */
-
 .keep_btn{
   position: fixed;
   left: 0;
@@ -88,4 +93,38 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
   height: 100rpx;
   line-height: 100rpx;
   background-color: #219dfa; 
+}
+/*省市区联动  */
+.citypicker{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 4;
+  background-color: #fff;
+}
+.citybody{
+  z-index: 5;
+  
+}
+.cityheader{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 0 35rpx;
+  font-size: 40rpx;
+  color: #333;
+  box-sizing: border-box;
+}
+.cityheader>view{
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.city-true{
+  color: #219dfa;
 }
