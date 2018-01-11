@@ -1,0 +1,81 @@
+/*引入小图标  */
+
+
+.icon-down-trangle-copy-copy-copy-copy:before { content: "\e83e"; }
+
+
+.container{
+  background-color: #eeeeee;
+}
+.order_price,.remark_msg,.delivery,.appendix,.take_over,.bill,.inventory
+{
+  width: 100%;
+  padding: 0 35rpx;
+  box-sizing: border-box;
+  font-size: 35rpx;
+  color: #333;
+  background-color: #fff;
+}
+.order_price>view,.remark_msg,.delivery,.appendix,.take_over_msg,.bill_msg,.inventory
+{
+  height:100rpx;
+  line-height:100rpx;
+  display:flex;
+  justify-content:space-between;
+}
+.order_price>view:first-child{
+  border-bottom: 3rpx solid #eee;
+}
+.remark_msg,.appendix,.bill{
+  margin: 15rpx 0;
+}
+.remark_msg>text:last-child,.inventory>view:last-child{
+  font-size: 30rpx;
+  color: #666;
+}
+.delivery>text:last-child{
+  font-size: 30rpx;
+  color: #666;
+}
+.minute>view{
+  height:100rpx;
+  line-height:100rpx;
+  display:flex;
+  justify-content:space-between;
+  font-size: 30rpx;
+  color: #666;
+}
+.no_bill{
+  height:100rpx;
+  line-height:100rpx;
+  font-size: 30rpx;
+  color: #666;
+}
+.meet{
+  width: 100%;
+  padding: 0 0 0 35rpx;
+  box-sizing: border-box;
+  font-size: 35rpx;
+  color: #333;
+  background-color: #fff;
+   height:100rpx;
+  line-height:100rpx;
+  display:flex;
+  justify-content:space-between;
+  margin: 15rpx 0;
+  border-top: 3rpx solid #eee;
+}
+.meet_info{
+  color: #636363;
+}
+.meet_money{
+  font-size: 40rpx;
+  color: #f57217;
+}
+.btn_order{
+  width: 32%;
+  background-color: #219dfa;
+  text-align: center;
+  color: #fff;
+  font-size: 37rpx;
+}

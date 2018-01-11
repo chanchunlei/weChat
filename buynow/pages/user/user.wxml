@@ -1,0 +1,92 @@
+<view class='container'>
+<!--头像  -->
+  <view class='head_box'>
+    <view class='user_img'>
+      <block wx:if="{{true}}">
+       <text class="iconfont icon-yonghu1"></text> 
+      </block>
+      <block wx:else>
+       <text style='background-image: url(/images/logo.png)' class='user_header'></text>
+      </block>
+      <text class="iconfont icon-xiugai"></text> 
+    </view>
+    <view class='user_name'>
+      未登录
+    </view>
+  </view>
+  <!--功能列表  -->
+  <view class='functions'>
+    <view bindtap='showCompany'>
+      <view class='icon_box infor'>
+        <text class="iconfont icon-mingxi"></text> 
+      </view>
+      <view class='infor_text'>
+        公司信息
+      </view>
+    </view>
+    <view bindtap='showAddress'>
+      <view class='icon_box location'>
+        <text class="iconfont icon-icon-yxj-address"></text> 
+      </view>
+      <view class='infor_text'>
+        收货地址
+      </view>
+    </view>
+    <view bindtap='showShare'>
+      <view class='icon_box share'>
+        <text class="iconfont icon-fenxiang"></text> 
+      </view>
+      <view class='infor_text'>
+        分享设置
+      </view>
+    </view>
+    <view bindtap='showReturn'>
+      <view class='icon_box return_goods'>
+        <text class="iconfont icon-fanhui"></text> 
+      </view>
+      <view class='infor_text'>
+        退货订单
+      </view>
+    </view>
+    <view>
+      <view class='icon_box app_return'>
+        <text class="iconfont icon-tuihuoshenqingxinxi"></text> 
+      </view>
+      <view class='infor_text'>
+        申请退货
+      </view>
+    </view>
+    <!--空  -->
+    <view class='forward'>
+     
+    </view>
+  </view>
+<!--客户服务  -->
+  <view class='client'>
+    <text>客户服务</text>
+    <view class='client_box'>
+     <!--left  -->
+      <view>
+        <view class='icon_box2 phone'>
+          <text class="iconfont icon-dianhua"></text> 
+        </view>
+        <view class='infor_text'>
+          服务热线
+        </view>
+      </view>
+     <!--right  -->
+      <view bindtap='showFeedback'>
+        <view class='icon_box2 view'>
+          <text class="iconfont icon-yijianfankui-shouye"></text> 
+        </view>
+        <view class='infor_text'>
+          意见反馈
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--了解订货系统  -->
+  <view class='order_box'>
+   <text>了解订货系统</text>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+<view class='container'>
+<!--订单详细  -->
+  <view>
+    <text class='iconfont icon-wancheng'></text>
+  </view>
+  <view class='order_num'>
+    <text>订单号：DH-O-20171115-076377</text>  
+  </view>
+  <view class='order_money'>
+    <text>应付金额：8888.00</text>
+  </view>
+<!--完成付款  -->
+   <view class='complete'>
+     <view bindtap='showOrder' class='complete_btn'>
+       完成
+     </view>
+     <view bindtap='payMoney' class='pay_money'>
+       付款
+     </view>
+   </view>
+</view>

@@ -1,0 +1,19 @@
+<view class='container'>
+  <view class='times'>
+    <text class='active'>1周内</text>
+    <text>1个月内</text>
+    <text>3个月内</text>
+  </view>
+  <view class='startimes'>
+    <text>开始时间</text>
+    <text>2017-12-25</text>
+  </view>
+  <view class='end'>
+    <text>结束时间</text>
+    <text>2018-01-08</text>
+  </view>
+  <view class='search_img'>
+    <image mode='scaleToFill' src='/images/addbtn.png'></image>
+  </view>
+
+</view>

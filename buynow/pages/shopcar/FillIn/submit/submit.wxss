@@ -1,0 +1,44 @@
+page{
+  background-color: #eee;
+}
+.icon-wancheng:before { content: "\e673"; font-size: 150rpx; color: #219dfa;}
+.container{
+  text-align: center;
+  padding-top: 160rpx;
+}
+/*订单详情  */
+.order_num{
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 38rpx;
+  color: #666;
+}
+.order_money{
+  font-size: 35rpx;
+  color: #666;
+}
+/*完成付款  */
+.complete{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 35rpx;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  font-size: 40rpx;
+  border-top: 3rpx solid #bebebe;
+}
+.complete_btn{
+  background-color: #fff;
+  width:50%;
+  color: #999;
+}
+.pay_money{
+  background-color: #219dfa;
+  width: 50%;
+  color: #fff;
+}

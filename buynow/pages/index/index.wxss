@@ -1,0 +1,160 @@
+
+/*链接外部字体库  */
+.icon-dianzan:before { content: "\e603"; }
+.icon-jiaru:before { content: "\e62b"; }
+
+
+.page__bd{
+  background-color: #0a7fd7;
+  padding: 3% 5% 0 5%;
+  overflow: hidden;
+}
+/*搜索  */
+.logo{
+  float: left;
+  width: 28px;
+  height: 28px;
+}
+.logo>image{
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx 0 0 10rpx;
+}
+.weui-search-bar{
+  border-radius: 0 10rpx 10rpx 0;
+  height: 28px;
+  line-height: 28px;
+  background-color: #fff;
+  padding: 0;
+  text-align: left;
+  border: none;
+}
+.weui-search-bar__label{
+  margin-top: 0;
+  padding-left: 2%;
+  height: 28px;
+  text-align: left;
+}
+.weui-search-bar__text{
+  height: 28px;
+  color: #5f5f5f;
+  vertical-align: top;
+}
+.weui-icon-search{
+  padding: 0 0 0 1%;
+  vertical-align: top;
+}
+/*公告  */
+.swiper_container {
+  height: 55rpx;
+  line-height: 55rpx;
+  width: 100%;
+}
+.swiper_item {
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: 2px;
+  color: #fff;
+ }
+ .swiper_item>text{
+   color: #ff820c;
+ }
+ /*列表  */
+ .all_content{
+   width: 100%;
+   font-size: 25rpx;
+   display: flex;
+   justify-content:flex-start;
+ }
+ .nav_left{
+   width: 24%;
+   text-align: center;
+ }
+ .nav_left>.hot_sell{
+   background-color: #ffffff;
+ }
+ .hot_sell>text{
+   font-size: 30rpx;
+   color: #fe0100;
+ }
+ .nav_left>view{
+   width: 100%;
+   height: 75rpx;
+   line-height: 75rpx;
+   border-bottom: 1px solid #e9e9e9;
+   background-color: #f7f7f7;
+   font-size: 30rpx;
+   color: #666;
+   overflow: hidden;
+ }
+ .nav_left>.normal{
+   background-color:#ffffff;
+   color:#037ed6;
+ }
+ /*list——concent  */
+ .list_box{
+   width: 76%;
+ }
+ .list_content{
+   width: 100%;
+   height:260rpx;
+   display: flex;
+   justify-content: space-around;
+   padding: 25rpx 0;
+   box-sizing: border-box;
+ }
+ .images_content{
+   width: 30%;
+   text-align: center;
+   height: 210rpx;
+ }
+ .images_content>image{
+   width: 100%;
+   height: 100%;
+ }
+ .msg_content{
+   width: 65%;
+   font-size: 14px;
+   position: relative;
+   border-bottom: 3rpx solid #e9e9e9;
+ }
+ .msg_title{
+   display: block;
+   font-size: 35rpx;
+   font-weight: 700;
+   color: #676767;
+   width: 100%;
+   height: 110rpx;
+   overflow: hidden;
+   text-overflow:ellipsis;
+ }
+ .spec{
+   display: block;
+   font-size: 25rpx;
+   color: #979797;
+ }
+ .prise_box{
+   position: absolute;
+   bottom: 0;
+   left: 0;
+ }
+ .RMB{
+   font-size: 25rpx;
+   font-weight: 700;
+   color: #ff7910;
+ }
+ .prise{
+   font-size: 35rpx;
+   font-weight: 700;
+   color: #ff7910;
+ }
+ .msg_content>.icon-jiaru{
+   position: absolute;
+   bottom: 0;
+   right: 35rpx;
+   font-size: 50rpx;
+   font-weight: 550;
+   color: #ff3626;
+ }

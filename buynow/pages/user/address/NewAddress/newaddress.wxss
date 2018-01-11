@@ -1,0 +1,91 @@
+page{
+  background-color: #fff;
+}
+.inp_address{
+  width: 100%;
+  padding: 0 35rpx;
+  box-sizing: border-box;
+}
+.expert{
+  min-height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 35rpx;
+  color: #333;
+  border-bottom: 3rpx solid #eee;
+}
+.expert>text{
+  width: 27%;
+}
+.inp_box{
+  width: 73%;
+}
+.inp_box_city{
+  width: 60%;
+}
+.auto{
+  text-align: right;
+}
+.expert>.tolerate{
+  width: 30%;
+}
+.inps{
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: left;
+  width: 100%;
+  font-size: 30rpx;
+  color: #969696;
+}
+.inps_address{
+  min-height: 100rpx;
+  line-height: 100rpx;
+  text-align: left;
+  width: 100%;
+  font-size: 30rpx;
+  color: #969696;
+}
+
+.font_style{
+  font-size: 30rpx;
+  color: #969696;
+  text-align: right;
+}
+/*修改默认样式  */
+checkbox .wx-checkbox-input{
+   border-radius: 8rpx;
+   width: 35rpx;
+   height: 35rpx;
+   margin: 0 15rpx 4rpx 0;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+   border-color: #cbe9fc;
+   background: #1e9cf9;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+   border-radius: 50%;
+   width: 35rpx;
+   height: 35rpx;
+   line-height: 35rpx;
+   text-align: center;
+   font-size:30rpx;
+   color:#fff;
+   background: transparent;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+}
+/*保存  */
+
+.keep_btn{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  font-size: 40rpx;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #219dfa; 
+}

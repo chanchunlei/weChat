@@ -1,0 +1,59 @@
+page{
+  background-color: #eee;
+}
+
+.years{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 35rpx;
+  color: #666;
+  padding: 0 35rpx;
+  box-sizing: border-box;  
+}
+.order_msg_box{
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  padding: 30rpx 35rpx;
+  box-sizing: border-box;  
+  margin-bottom: 3rpx;
+}
+.month{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  line-height: 150rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 35rpx;
+  background-color: #bbb;
+}
+.color_one{
+  background-color: #004da5;
+}
+.color_two{
+  background-color: #e23c95;
+}
+.color_three{
+  background-color: #01aaea;
+}
+.order_num,.order_pay{
+  height: 150rpx;
+  line-height: 75rpx;
+  padding: 0 35rpx;
+  font-size: 38rpx;
+}
+.order_num>text{
+  display: block;
+}
+.order_pay>text{
+  display: block;
+}
+.font-color{
+  color: #333;
+}
+.font-color2{
+  color: #999;
+}

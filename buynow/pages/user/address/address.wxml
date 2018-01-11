@@ -1,0 +1,19 @@
+<view class='container'>
+  <view class='address_box'>
+    <view class='address_name'>
+      <view><text>百脑汇</text>\t <text>13331892610</text></view>
+      <view class='font_color'><text>(客户名称：百脑汇)</text></view>
+    </view>
+    <view class='revise'>
+      <checkbox-group><label><checkbox>默认地址</checkbox></label></checkbox-group>
+      <view>
+        <text class='margin_right'>编辑</text>
+        <text>删除</text>
+      </view>
+    </view>
+  </view>
+  <!--新增地址  -->
+  <view bindtap='newAddress' class='new_address'>
+     新增地址
+  </view>
+</view>

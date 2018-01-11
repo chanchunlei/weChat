@@ -1,0 +1,36 @@
+<view class='container'>
+  <view class='order_nav'>
+    <view bindtap='showHistory'>搜索</view>
+    <view bindtap='showAdd'>筛选</view>
+  </view>
+  <!--订单列表  -->
+  <view class='order_box'>
+    <view class='msg_order'>
+      <view class='ordernumber'><text>DH-O-20171115-07</text><text>待订单审核</text></view>
+      <view class='num'><text>数量：1</text></view>
+      <view class='time'><text>时间：2017-11-15\t\t14:23:09</text></view>
+      <view class='sum'><text>金额：5688.00</text><text>（未付款）</text></view>
+    </view> 
+    <view class='paybutton'>
+     <block>
+      <image bindtap='payment' mode='aspectFit' class='paymoney' src='/images/paymoney.png'></image>
+     </block> 
+      <image bindtap='showDetail' mode='aspectFit' class='buyagain' src='/images/buyagain.png'></image>
+    </view>
+  </view>
+
+  <view class='order_box'>
+    <view class='msg_order'>
+      <view class='ordernumber'><text>DH-O-20171115-07</text><text>已作废</text></view>
+      <view class='num'><text>数量：1</text></view>
+      <view class='time'><text>时间：2017-11-15\t\t14:23:09</text></view>
+      <view class='sum'><text>金额：5688.00</text><text>（未付款）</text></view>
+    </view> 
+    <view class='paybutton'>
+     <block wx:if="{{isFalse}}">
+      <image mode='aspectFit' class='paymoney' src='/images/paymoney.png'></image>
+     </block> 
+      <image mode='aspectFit' class='buyagain' src='/images/buyagain.png'></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,61 @@
+<view class='container'>
+  <!--商品图片  -->
+  <swiper indicator-dots="{{indicatorDots}}" indicator-active-color="#eee" circular="{circular}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="key">
+      <swiper-item>
+        <image mode='aspectFit' src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!--商品信息  -->
+  <view class='goods_detail'>
+    <text class='title_goods'>【示例商品】Apple IphoneX</text>
+    <view class='norms'>
+      <text>颜色：暗灰</text>
+      <text>存储容量：64G</text>
+    </view>
+    <view class='price'><text>￥</text><text>8888</text></view>
+    <text class='market_price'>市场价：9999</text>
+    <view class='colors'><text class='active'>暗灰色</text><text>玫瑰金</text></view>
+    <text class='unit'>单位</text>
+    <view class='spec'>
+       <text class='on'>台</text>
+    </view>
+    <checkbox-group bindchange="checkboxChange">
+      <label class="checkbox">
+        <checkbox value="1"/>启用多选
+      </label>
+    </checkbox-group>
+    <text class='buynum'>订购数量</text>
+    <view class="stepper">
+      <!-- 减号 -->
+      <text class="{{minusStatuses[index]}}" data-index="{{index}}" bindtap="bindMinus">-</text>
+      <!-- 数值 -->
+      <input type="number" bindchange="bindManual" value="1" />
+      <!-- 加号 -->
+      <text class="normal" data-index="{{index}}" bindtap="bindPlus">+</text>
+    </view>
+  </view>
+  <!-- 选项卡 -->
+  <view class="page__bd">
+        <view class="weui-tab">
+            <view class="weui-navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+            </view>
+            <view class="weui-tab__panel">
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">产品参数</view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">商品附件</view>
+            </view>
+        </view>
+    </view>
+    <!--加入购物车  -->
+    <view class='join'>
+      <view><text class='iconfont icon-shoucang icon-shoucang1'></text></view>
+      <view class='shopcar'>加入购物车</view>
+    </view>
+</view>

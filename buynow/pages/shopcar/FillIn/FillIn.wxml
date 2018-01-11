@@ -1,0 +1,70 @@
+<view class='container'>
+  <view class='order_price'>
+    <view>
+      <text>订单金额</text>
+      <text>8888.00</text>
+    </view>
+    <view>
+      <text>运费</text>
+      <text>0.00</text>
+    </view>
+  </view>
+  <view class='remark_msg'>
+    <text>备注信息</text>
+    <text>请输入</text>
+  </view>
+  <view class='delivery'>
+    <text>交货日期</text>
+    <text>请选择</text>
+  </view>
+  <view class='appendix'>
+    <text>订单附件</text>
+    <text class='iconfont icon-down-trangle-copy-copy-copy-copy'></text>
+  </view>
+  <!--收货信息  -->
+  <view class='take_over'>
+    <view class='take_over_msg'>
+      <text>收货信息</text>
+      <text class='iconfont icon-down-trangle-copy-copy-copy-copy'></text>
+    </view>
+    <view class='minute'>
+      <view>
+        <text>百脑汇</text>
+        <text>13331892610</text>
+      </view>
+      <view>
+        <text>省市（百脑汇）</text>
+      </view>
+    </view>
+  </view>
+ <!--发票  -->
+  <view class='bill'>
+    <view class='bill_msg'>
+      <text>发票信息</text>
+      <text class='iconfont icon-down-trangle-copy-copy-copy-copy'></text>
+    </view>
+    <view class='no_bill'>
+      <text>发票类型：不需要发票</text>
+    </view>
+  </view>
+  <!--清单  -->
+  <view class='inventory'>
+      <view>商品清单</view>
+      <view>
+        <text>共1款，总数1</text>
+        <text></text>
+      </view>
+  </view>
+  <!--应付  -->
+  <view class='meet'>
+    <view>
+      <text class='meet_info'>应付金额：</text>
+      <text class='meet_money'>8888.00</text>
+    </view>
+    <view bindtap='submitOrder' class='btn_order'>
+      提交订单
+    </view>
+  </view>
+
+
+</view>
