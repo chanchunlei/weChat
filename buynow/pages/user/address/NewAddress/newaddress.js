@@ -42,7 +42,7 @@ Page({
         var allprovince = res.result[0];
         var allcity = res.result[1];
         var allarea = res.result[2];
-        console.log(allcity);
+        //console.log(allcity);
         that.setData({
           allprovince,allcity,allarea
         });
