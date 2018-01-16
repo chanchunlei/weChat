@@ -24,68 +24,31 @@
     <view class='all_content'>
        <!--nav-left  -->
        <view class='nav_left'>
-          <view class='hot_sell'><text class="iconfont icon-dianzan">热销</text></view>
-         <block wx:for="{{classify}}" wx:key="key">
-          <view bindtap='showList'  data-object-id="{{item.id}}" data-index="{{index}}" class='other_nav {{style[index]}}'>{{item.title}}</view>
+          <view bindtap='showList' data-object-id="{{codeleft}}" class='hot_sell'><text class="iconfont icon-dianzan">热销</text></view>
+         <block wx:for="{{classify}}" wx:key="{{item.codeleft}}">
+          <view bindtap='showList'  data-object-id="{{item.codeleft}}" data-index="{{index}}" class='other_nav {{style[index]}}'>{{item.leftName}}</view>
          </block>
        </view>
        <!--content-right  -->
        <view class='list_box'>
        <!--连接数据后循环渲染  -->
-        <view class='list_content' bindtap='showDetail'>
-            <view class='images_content'>
-              <image mode="aspectFit" src='/images/iphoneX.png'></image>
-            </view>
-            <view class='msg_content'>
-              <text class='msg_title'>【示例商品】Apple IphoneX</text>
-              <text class='spec'>2个规格可选</text>
-              <view class='prise_box'>
-                <text class='RMB'>￥</text><text class='prise'>8888</text>
+         <block wx:for="{{goodslist}}" wx:key="{{item.coderight}}">
+          <view class='list_content' wx:if="{{item.coderight==objectId}}" bindtap='showDetail'>
+              <view class='images_content'>
+                <image mode="aspectFit" src='{{item.src}}'></image>
               </view>
-              <text catchtap='JoinShopcar' class="iconfont icon-jiaru"></text> 
-            </view>
-        </view>
-        <view class='list_content'>
-            <view class='images_content'>
-              <image mode="aspectFit" src='/images/iphoneX.png'></image>
-            </view>
-            <view class='msg_content'>
-              <text class='msg_title'>【示例商品】Apple IphoneX</text>
-              <text class='spec'>2个规格可选</text>
-              <view class='prise_box'>
-                <text class='RMB'>￥</text><text class='prise'>8888</text>
+              <view class='msg_content'>
+                <text class='msg_title'>{{item.name}}</text>
+                <text class='spec'>{{item.present}}</text>
+                <view class='prise_box'>
+                  <text class='RMB'>￥</text><text class='prise'>{{item.money}}</text>
+                </view>
+                <text catchtap='JoinShopcar' class="iconfont icon-jiaru"></text> 
               </view>
-              <text class="iconfont icon-jiaru"></text> 
-            </view>
-        </view>
-        <view class='list_content'>
-            <view class='images_content'>
-              <image mode="aspectFit" src='/images/iphoneX.png'></image>
-            </view>
-            <view class='msg_content'>
-              <text class='msg_title'>【示例商品】Apple IphoneX</text>
-              <text class='spec'>2个规格可选</text>
-              <view class='prise_box'>
-                <text class='RMB'>￥</text><text class='prise'>8888</text>
-              </view>
-              <text class="iconfont icon-jiaru"></text> 
-            </view>
-        </view>
-        <view class='list_content'>
-            <view class='images_content'>
-              <image mode="aspectFit" src='/images/iphoneX.png'></image>
-            </view>
-            <view class='msg_content'>
-              <text class='msg_title'>【示例商品】Apple IphoneX</text>
-              <text class='spec'>2个规格可选</text>
-              <view class='prise_box'>
-                <text class='RMB'>￥</text><text class='prise'>8888</text>
-              </view>
-              <text class="iconfont icon-jiaru"></text> 
-            </view>
-        </view>
+          </view>
+         </block>
+       
+
       </view>
-
-
     </view>
 </view>

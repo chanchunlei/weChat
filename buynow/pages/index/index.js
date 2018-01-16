@@ -1,5 +1,5 @@
 
-
+import api from '../../api/api.js'
 Page({
 
   /**
@@ -10,14 +10,10 @@ Page({
       { url: "url", title: "欢迎来到百脑汇订货" },
       { url: "url", title: "欢迎来到乐之" },
       { url: "url", title: "欢迎来到百脑汇旗舰店" }],
-    classify: [
-      { id: 1, title: "智能商品" },
-      { id: 2, title: "智能商品" },
-      { id: 3, title: "智能商品" },
-      { id: 4, title: "智能商品" },
-      { id: 5, title: "智能商品" },
-      { id: 6, title: "智能商品" }
-    ]
+    classify: [],
+    goodslist:[],
+    codeleft: 1,
+    objectId: 0
   },
   // 跳转到搜索页
   showInput: function () {
@@ -31,6 +27,7 @@ Page({
     var objectId = e.currentTarget.dataset.objectId;
     var index = parseInt(e.currentTarget.dataset.index);
     this.setClass(index);
+    this.setData({ objectId})
   },
   //toggle nav的样式
   setClass: function (index) {
@@ -50,22 +47,30 @@ Page({
      url: '../detail/detail',
    })
   },
-  // 加入购物车
-  JoinShopcar: function () {
-    console.log("测试冒泡");
-  },
+  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var that = this
+    api.getList({
+      query: {
+        code: 123456789
+      },
+      success: function (res) {
+        let classify = res.data.data.left
+        let goodslist = res.data.data.right
+        that.setData({classify,goodslist})
+        console.log(res.data)
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+    wx.hideToast()
   },
 
   /**

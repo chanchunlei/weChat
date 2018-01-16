@@ -216,18 +216,27 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
    font-weight: 700;
    color: #676767;
    width: 100%;
-   height: 110rpx;
+   height: 50rpx;
+   line-height: 50rpx;
    overflow: hidden;
    text-overflow:ellipsis;
+   white-space:nowrap;
  }
  .spec{
-   display: block;
    font-size: 25rpx;
    color: #979797;
+   height: 80rpx;
+   line-height: 40rpx;
+   width: 100%;
+   overflow: hidden;
+   text-overflow:ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
  }
  .prise_box{
    position: absolute;
-   bottom: 0;
+   bottom: 15rpx;
    left: 0;
  }
  .RMB{
