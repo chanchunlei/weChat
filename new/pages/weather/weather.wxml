@@ -1,0 +1,73 @@
+<view class='container' style='{{sty}}'>
+    <!--搜索  -->
+    <view class="weui-search-bar">
+                      <view class="weui-search-bar__form">
+                          <view class="weui-search-bar__box">
+                              <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                              <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                              <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                                  <icon type="clear" size="14"></icon>
+                              </view>
+                          </view>
+                          <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                              <icon class="weui-icon-search" type="search" size="14"></icon>
+                              <view class="weui-search-bar__text">搜索</view>
+                          </label>
+                      </view>
+                      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+                  </view>
+                  <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+                      <view bindtap='showTo' data-Id="{{inputVal}}" class="weui-cell">
+                          <view class="weui-cell__bd">
+                              <view>{{inputVal}}</view>
+                          </view>
+                      </view>
+                  </view>
+
+
+    <view class='contain'>
+        <view class='city'>
+          <text>{{list[0].city_name}}</text>
+          <text>{{list[0].now.text}}</text>
+        </view>
+        <view class='temperature'>
+          <text>{{list[0].now.temperature}}℃</text>
+        </view>
+    </view>
+    <view class='title'>未来几天</view>
+    <view class='box'>
+      <block wx:for="{{list[0].future}}" wx:key="date">
+        <view class='future'>
+          <view class='imgs'>
+            <image src='https://www.art-framework.com/weChat/weather/{{item.code1}}.png'></image>
+            <text>/</text>
+            <image src='https://www.art-framework.com/weChat/weather/{{item.code2}}.png'></image>
+          </view>
+          <view class='date'>
+            <text>{{item.day}}</text>
+            <text>{{item.text}}</text>
+          </view>
+          <view class='feel'>
+              {{item.low}}~{{item.high}}℃
+          </view>
+        </view>
+      </block>
+    </view>
+   <!--页脚  -->
+    <view class="weui-footer">
+            <view class="weui-footer__links" bindtap='showModel'>
+                <text class="weui-footer__link">信息来源</text>
+                <text class="weui-footer__link">技术支持</text>
+            </view>
+            <view class="weui-footer__text">Copyright © 2017-2017 weui.io</view>
+    </view>
+    <!--框  -->
+    <view style='{{bgc}}' bindtap='hideModel' class='model_black'></view>
+    <view style='{{animation}}' class='model_massage'>
+      <view class='model_img'>
+        <image src='{{imgUrls}}' mode='aspectFit'></image>
+      </view>
+      <view class='connect'>信息来源：中央天气预报</view>
+      <view class='connect'>联系方式：13569910687</view>
+    </view>
+</view>

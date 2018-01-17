@@ -24,7 +24,7 @@
       <view class='expert'>
         <text>省/市/区：</text>
         <view class='inp_box_city'>
-          <input bindtap='showModel' name='city' class='inps_address' type='text' value='{{areaSelectedStr}}' placeholder='选择省市区' placeholder-class='font_style' focus='false'></input>
+          <input bindtap='showModel' name='city' class='inps_address' type='text' value='{{areaSelectedStr}}' placeholder='选择省市区' placeholder-class='font_style' focus='{{false}}'></input>
         </view>
         <text bindtap='fetchPOI' class='auto'>自动选择</text>
       </view>

@@ -1,0 +1,23 @@
+<view class='container'>
+   <view style='background-image:url("{{musicitem[index].albumpic_big}}")' class='bg'></view>
+   <view class='head'>
+      <view>{{musicitem[index].songname}}</view>
+      <view>{{musicitem[index].singername}}</view>
+   </view>
+   
+   <view class='run' style='background-image:url("{{musicitem[index].albumpic_big}}")'></view> 
+   <view class='footer'>
+    
+    <slider bindchange="sliderchange" selected-color="#8d8d8d" max="{{maxnum}}" min='0' value='{{active}}'></slider>
+    <view bindtap='prev'>
+       <image src='https://www.art-framework.com/weChat/imgs/prev.png'></image>
+    </view>
+    <view bindtap='playmusic'>
+       <image src='{{Imgurl}}'></image>
+    </view>
+    <view bindtap='next'>
+       <image src='https://www.art-framework.com/weChat/imgs/next.png'></image>
+    </view>
+    
+   </view>
+</view>

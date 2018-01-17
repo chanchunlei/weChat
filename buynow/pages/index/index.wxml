@@ -32,6 +32,9 @@
        <!--content-right  -->
        <view class='list_box'>
        <!--连接数据后循环渲染  -->
+       <!--热销效果  -->
+         
+         <!--分类数据  -->
          <block wx:for="{{goodslist}}" wx:key="{{item.coderight}}">
           <view class='list_content' wx:if="{{item.coderight==objectId}}" bindtap='showDetail'>
               <view class='images_content'>

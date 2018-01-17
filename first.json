@@ -1,0 +1,43 @@
+{
+	"right": [
+		{"name":"快手","src":"./src/assets/aa.gif","money":"8888","id":"01112","present":"这 个6的一批","coderight": "0"},
+		{"name":"双击666","src":"./src/assets/aa.gif","money":"12415","id":"011232","present":"这 个6的一批","coderight": "0"},
+		{"name":"老铁来一波","src":"./src/assets/aa.gif","money":"12432","id":"012412","present":"这 个6的一批","coderight": "0"},
+		{"name":"我是明星主播1","src":"./src/assets/aa.gif","money":"526","id":"0115212","present":"这 个6的一批","coderight":"1"},
+		{"name":"芜湖大师马","src":"./src/assets/aa.gif","money":"456","id":"01612","present":"这 个6的一批","coderight":"1"},
+		{"name":"小苍","src":"./src/assets/aa.gif","money":"46","id":"01742","present":"这 个6的一批","coderight":"1"},
+		{"name":"miss","src":"./src/assets/aa.gif","money":"8845688","id":"0118","present":"这 个6的一批","coderight":"1"},
+		{"name":"jy","src":"./src/assets/aa.gif","money":"884688","id":"011123","present":"这 个6的一批","coderight":"1"},
+		{"name":"小智2","src":"./src/assets/aa.gif","money":"8845688","id":"012412","present":"这 个6的一批","coderight":"2"},
+		{"name":"刘德华","src":"./src/assets/aa.gif","money":"8456888","id":"0971112","present":"这 个6的一批","coderight":"2"},
+		{"name":"张学友","src":"./src/assets/aa.gif","money":"8845688","id":"0186112","present":"这 个6的一批","coderight":"2"},
+		{"name":"郭富城","src":"./src/assets/aa.gif","money":"456","id":"0115612","present":"这 个6的一批","coderight":"2"},
+		{"name":"这一波可以","src":"./src/assets/aa.gif","money":"8845688","id":"0145112","present":"这 个6的一批","coderight":"2"},
+		{"name":"很稳3","src":"./src/assets/aa.gif","money":"8845488","id":"0132112","present":"这 个6的一批","coderight":"3"},
+		{"name":"猥琐发育别浪","src":"./src/assets/aa.gif","money":"8845688","id":"06661112","present":"这 个6的一批","coderight":"3"},
+		{"name":"20投","src":"./src/assets/aa.gif","money":"456","id":"0115512","present":"这 个6的一批","coderight":"3"},
+		{"name":"实例商品 apple iphoneX实例商品 apple iphoneX","src":"./src/assets/aa.gif","money":"8888","id":"0177112","present":"这 个6的一批","coderight":"3"},
+		{"name":"实例商品 apple iphoneX","src":"./src/assets/aa.gif","money":"8888","id":"0118812","present":"这 个6的一批","coderight":"4"},
+		{"name":"实例商品 apple iphoneX","src":"./src/assets/aa.gif","money":"8888","id":"01119992","present":"这 个6的一批","coderight":"4"},
+		{"name":"实例商品 apple iphoneX","src":"./src/assets/aa.gif","money":"8888","id":"01155512","present":"这 个6的一批","coderight":"4"},
+		{"name":"实例商品 apple iphoneX","src":"./src/assets/aa.gif","money":"8888","id":"01114442","present":"这 个6的一批","coderight":"4"},
+		{"name":"实例商品 apple iphoneX","src":"./src/assets/aa.gif","money":"8888","id":"01133312","present":"这 个6的一批","coderight": "4"},
+		{"name":"实例商品 apple iphoneX","src":"./src/assets/aa.gif","money":"8888","id":"011155552","present":"这 个6的一批","coderight": "4"},
+		{"name":"实例商品 apple iphoneX","src":"./src/assets/aa.gif","money":"8888","id":"01777712","present":"这 个6的一批","coderight": "4"},
+		{"name":"实例商品 apple iphoneX","src":"./src/assets/aa.gif","money":"8888","id":"01122212","present":"这 个6的一批","coderight": "4"},
+		{"name":"实例商品 apple iphoneX","src":"./src/assets/aa.gif","money":"8888","id":"011102","present":"这 个6的一批","coderight": "4"},
+		{"name":"实例商品 apple iphoneX","src":"./src/assets/aa.gif","money":"8888","id":"0111012","present":"这 个6的一批","coderight": "4"},
+		{"name":"实例商品 apple iphoneX","src":"./src/assets/aa.gif","money":"8888","id":"0110212","present":"这 个6的一批","coderight": "4"},
+		{"name":"实例商品 apple iphoneX","src":"./src/assets/aa.gif","money":"8888","id":"0110312","present":"这 个6的一批","coderight": "4"},
+		{"name":"实例商品 apple iphoneX","src":"./src/assets/aa.gif","money":"8888","id":"041112","present":"这 个6的一批","coderight": "4"},
+		{"name":"实例商品 apple iphoneX","src":"./src/assets/aa.gif","money":"8888","id":"0110512","present":"这 个6的一批","coderight": "4"},
+		{"name":"实例商品 apple iphoneX","src":"./src/assets/aa.gif","money":"0000","id":"0106112","present":"这 个6的一批","coderight": "4"}
+	],
+		"left":[
+		{"leftName":"斗鱼TV","codeleft": "0"},
+		{"leftName":"熊猫TV","codeleft":"1"},
+		{"leftName":"全民TV","codeleft":"2"},
+		{"leftName":"CCTV","codeleft":"3"},
+		{"leftName":"中央人品广播电台","codeleft":"4"}
+	]
+}

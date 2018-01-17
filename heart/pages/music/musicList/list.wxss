@@ -1,0 +1,34 @@
+.container>view{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: 20rpx 0;
+  padding: 20rpx;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.song{
+  width: 100%;
+  height: 180rpx;
+  position: relative;
+}
+.song>image{
+  width: 180rpx;
+  height: 180rpx;
+}
+.song>text{
+  position: absolute;
+  left: 200rpx;
+}
+.songname{
+  height: 50rpx;
+  overflow: hidden;
+  font-size: 36rpx;
+  color: #333;
+  top: 20rpx;
+}
+.singername{
+  font-size: 30rpx;
+  color: #666;
+  top: 110rpx;
+}

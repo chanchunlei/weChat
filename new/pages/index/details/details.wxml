@@ -1,0 +1,17 @@
+<view class='containers'>
+     <text class='kinds'>{{massage.city}}</text>
+     <text class='author'>{{massage.place}}</text>
+     <view class='imgs'>
+        <image src='{{massage.pid}}' style='width: 100%; hight: 600rpx;' mode='aspectFit' />
+     </view>
+     <view class='content'>
+        
+        <text>{{massage.content}}</text>
+        <view>交通：</view>
+        <text>{{massage.traffic}}</text>
+        <view>门票：</view>
+        <text>{{massage.spend}}</text>
+        <view>开放时间：</view>
+        <text>{{massage.opentime}}</text>
+     </view>
+</view>

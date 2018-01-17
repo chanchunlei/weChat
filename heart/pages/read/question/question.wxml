@@ -1,0 +1,23 @@
+<view class='contain'> 
+   <view class='header'>
+      <view class='left'>
+           <image src='{{passages.author_list[0].web_url}}' />
+           <view class='user'>
+             <text class='name'>{{passages.author_list[0].user_name}}</text>
+             <text>{{passages.question_makettime}}</text>
+           </view>
+      </view>
+   </view>
+   <!--内容  -->
+   <view class='text'>
+     <text>{{passages.question_title}}</text>
+     <text>{{passages.question_content}}</text>
+     <text>{{passages.answer_content}}</text>
+   </view>
+   <view class='edit'>
+      <text>{{passages.charge_edt}}</text>
+   </view>
+
+
+
+</view>

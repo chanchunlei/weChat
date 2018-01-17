@@ -1,0 +1,28 @@
+<view class='contain'> 
+   <view class='header'>
+      <view class='left'>
+           <image src='{{passage.author[0].web_url}}' />
+           <view class='user'>
+             <text class='name'>{{passage.author[0].user_name}}</text>
+             <text>{{passage.hp_makettime}}</text>
+           </view>
+      </view>
+      <block wx:if="{{isFalse}}">
+        <view class='right' bindtap='toggleAudio'>
+            <image class="essay-play-img" src="{{audioBtn.imgurl}}"></image>
+            <text class="essay-play-text">{{audioBtn.text}}</text>
+        </view>
+      </block>
+   </view>
+   <!--内容  -->
+   <view class='text'>
+     <text>{{passage.hp_title}}</text>
+     <text>{{passage.hp_content}}</text>
+   </view>
+   <view class='edit'>
+      <text>{{passage.hp_author_introduce}}</text>
+   </view>
+
+
+
+</view>

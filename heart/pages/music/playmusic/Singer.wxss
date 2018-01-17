@@ -1,0 +1,50 @@
+.container>view{
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+}
+.bg{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  background-size: contain;
+  filter: blur(8px);
+  position: relative;
+  z-index: 0;
+}
+.head{
+  text-align: center;
+  font-size: 36rpx;
+  color: #fff;
+  top: 120rpx;
+}
+.head>view:first-child{
+  font-size: 40rpx;
+}
+.container>.run{
+  width: 400rpx;
+  height: 400rpx;
+  left: 50%;
+  margin-left: -200rpx;
+  border: 1px solid #e6e6e6;
+  border-radius: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 310rpx;
+}
+.footer{
+  width: 100%;
+  bottom: 80rpx;
+}
+.footer>view{
+  display: inline-block;
+  width: 33.3%;
+  text-align: center;
+  line-height: 100rpx;
+  margin-top: 50rpx;
+ }
+.footer image{
+  width: 90rpx;
+  height: 90rpx;
+}

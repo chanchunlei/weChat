@@ -1,0 +1,23 @@
+<view class='contain'> 
+   <view class='header'>
+      <view class='left'>
+           <image src='{{passage.author_list[0].web_url}}' />
+           <view class='user'>
+             <text class='name'>{{passage.author_list[0].user_name}}</text>
+             <text>{{passage.maketime}}</text>
+           </view>
+      </view>
+   </view>
+   <!--内容  -->
+   <view class='text'>
+     <text>{{passage.title}}</text>
+     <text>{{passage.excerpt}}</text>
+     <text>{{passage.content}}</text>
+   </view>
+   <view class='edit'>
+      <text>{{passage.charge_edt}}</text>
+   </view>
+
+
+
+</view>

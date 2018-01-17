@@ -1,0 +1,11 @@
+<view class='container'>
+    <view wx:for="{{musicList}}" wx:for-index="idx" wx-if="{{idx<num}}" wx:key="key">
+      <view class='song' bindtap='playmusic' data-id="{{item}}" data-index="{{idx}}">
+        <image src='{{item.albumpic_small}}' mode="aspectFit"></image>
+        <text class='songname'>{{item.songname}}</text>
+        <text class='singername'>{{item.singername}}</text>
+      </view>
+    </view>
+    <view class='nomore'>没有更多了~</view>
+    
+</view>

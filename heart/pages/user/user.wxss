@@ -1,0 +1,41 @@
+.container{
+  padding-top: 100rpx;
+  border-box: box-sizing;
+  background-color: #e6e6e6; 
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 150rpx;
+  width: 98%;
+  padding: 0 1%;
+  border-box: box-sizing;
+  font-size: 16px;
+}
+.user-motto{
+  background-color: #fff;
+  height: 100rpx;
+  padding-left: 30rpx;
+  line-height: 100rpx;
+  border-top: 1px solid rgba(0,0,0,.2);
+  border-radius: 3px;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+}
+.usermotto>.user-motto:first-child{
+  border-bottom: none;
+}

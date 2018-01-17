@@ -1,0 +1,45 @@
+<!--index.wxml-->
+<view class="contain">
+ 
+  <!-- 轮播图 -->
+    <view class='loopImg'>
+        <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+          <block wx:for="{{list}}" wx:if="{{item.id<=4}}" wx:for-index='idx' wx:key="key">
+            <swiper-item>
+               <navigator class='image_to' url='/pages/index/details/details?idx={{idx}}'>
+                 <image src="{{item.pid}}" style="width: 100%; height: 100%;" mode='scaleToFill'/>
+               </navigator>
+            </swiper-item>
+          </block>
+        </swiper> 
+    </view>
+    <!-- 图片板块 -->
+    <view class='scenery'>
+      <text>热门</text>
+      <view class='conent'>
+        <view class='img' wx:for="{{list}}" wx:for-index="idx" wx:if="{{item.id>4}}" wx:key="key">
+          <navigator class='imgs_a' url='/pages/index/details/details?idx={{idx}}'>
+            <image src="{{item.pid}}" style="width: 100%; height: 100%;" mode='aspectFit'/>
+          </navigator>
+        </view>
+      </view>  
+    </view>
+    <!--页脚  -->
+    <view class="weui-footer">
+            <view class="weui-footer__links" bindtap='showModel'>
+                <text class="weui-footer__link">信息来源</text>
+                <text class="weui-footer__link">技术支持</text>
+            </view>
+            <view class="weui-footer__text">Copyright © 2017-2017 weui.io</view>
+    </view>
+    <!--框  -->
+    <view style='{{bgc}}' bindtap='hideModel' class='model_black'></view>
+    <view style='{{animation}}' class='model_massage'>
+      <view class='model_img'>
+        <image src='{{imgUrls}}' mode='aspectFit'></image>
+      </view>
+      <view class='connect'>信息来源：网络</view>
+      <view class='connect'>联系方式：13569910687</view>
+    </view>
+</view>

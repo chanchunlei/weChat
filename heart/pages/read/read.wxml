@@ -1,0 +1,48 @@
+<view class='container'>
+  <view class='loopImg'>
+    <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+      <block wx:for="{{carousel}}" wx:key="key">
+        <swiper-item>
+          <image src="{{item.cover}}" class="slide-image" style="width: 100%; height: 100%;" mode='scaleToFill'/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!--轮播内容  -->
+  
+  <swiper class='articles-swiper' duration="{{duration}}">
+    <block wx:for="{{articles.essay}}" wx:for-index="idx" wx:key="{{content_id}}">
+      <swiper-item class="articles-swiper-item">
+        <scroll-view class='articles' scroll-y="true">
+          <view class='box'>
+            <import src="templates/essayItem.wxml"/>
+            <template is="essay-item" data="{{item: articles['essay'][idx]}}"/>
+
+            <import src="templates/questionItem.wxml"/>
+            <template is="question-item" data="{{item: articles['question'][idx]}}"/>
+
+            <import src="templates/serialitem.wxml"/>
+            <template is="serial-item" data="{{item: articles['serial'][idx]}}"/> 
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </block>
+  </swiper>
+  
+  <view class="weui-footer">
+            <view class="weui-footer__links" bindtap='showModel'>
+                <text class="weui-footer__link">信息来源</text>
+                <text class="weui-footer__link">技术支持</text>
+            </view>
+            <view class="weui-footer__text">Copyright © 2017-2017 weui.io</view>
+  </view>
+  <view style='{{bgc}}' bindtap='hideModel' class='model_black'></view>
+    <view style='{{animation}}' class='model_massage'>
+      <view class='model_img'>
+        <image src='{{imgUrls}}' mode='aspectFit'></image>
+      </view>
+      <view class='connect'>信息来源：网络</view>
+      <view class='connect'>联系方式：13569910687</view>
+  </view>
+</view>
