@@ -11,30 +11,17 @@
   </view>
   <!--筛选条件  -->
   <view class='nav'>
-    <view class='multiple'>综合</view>
-    <view class='price_sort'>价格
-      <text class="iconfont icon-sanjiaoxing"></text>
-      <text class="iconfont icon-sanjiaoxing-copy"></text> 
+    <view bindtap='showAll' class='multiple {{classname.all}}'>综合</view>
+    <view bindtap='showPrice' data-price="{{Price}}" class='price_sort {{classname.price}}'>价格
+      <text class="iconfont icon-sanjiaoxing {{on.delta1}}"></text>
+      <text class="iconfont icon-sanjiaoxing-copy {{on.delta2}}"></text> 
     </view>
-    <view bindtap='showMore' class='more_kinds'>更多
-      <text class="iconfont icon-down-trangle-copy-copy-copy"></text>
-    </view>
-    <view bindtap='showScreen' class='screen'>筛选
+    <view bindtap='showMore' class='more_kinds {{classname.sales}}'>促销</view>
+    <view bindtap='showScreen' class='screen {{classname.screen}}'>筛选
       <text class="iconfont icon-down-trangle-copy-copy-copy"></text>
     </view>
   </view>
-  <!--弹框  -->
-  <!--更多弹窗  -->
-  <block wx:if="{{MoreFalse}}">
-    <view class='more_model'>
-        <text>智能排序</text>
-        <text>商品编码：从小到大</text>
-        <text>商品编码：从大到小</text>
-        <text>商品编码：从A到Z</text>
-        <text>商品编码：从Z到A</text>
-        <text>最新上架优先</text>
-    </view>
-  </block>  
+  <!--弹框  --> 
     <!--筛选弹窗  -->
   <block wx:if="{{ScreenFalse}}">
     <view class='screen_model'>
@@ -71,61 +58,28 @@
        <view bindtap='HideAll' class='model_black'></view>
     </block>
     <!--list  -->
-    <view class='list_box'>
+    <scroll-view bindscrolltolower="loadMore" scroll-y lower-threshold='10' class='list_box'>
        <!--连接数据后循环渲染  -->
-      <view class='list_content' bindtap='showDetail'>
+     <block wx:for="{{goodslist}}" wx:key="{{item.gid}}">
+      <view bindtap='' class='list_content' bindtap='showDetail'>
           <view class='images_content'>
-            <image mode="aspectFit" src='/images/iphoneX.png'></image>
+            <image mode="aspectFit" src='{{item.g_pic}}'></image>
           </view>
           <view class='msg_content'>
-            <text class='msg_title'>【示例商品】Apple IphoneX</text>
-            <text class='spec'>2个规格可选</text>
+            <text class='msg_title'>{{item.g_name}}</text>
+            <text class='spec'>{{item.introduction}}</text>
             <view class='prise_box'>
-              <text class='RMB'>￥</text><text class='prise'>8888</text>
+              <text class='RMB'>￥</text><text class='prise'>{{item.g_price}}</text>
             </view>
-            <text class="iconfont icon-jiaru"></text> 
           </view>
       </view>
-      <view class='list_content'>
-          <view class='images_content'>
-            <image mode="aspectFit" src='/images/iphoneX.png'></image>
-          </view>
-          <view class='msg_content'>
-            <text class='msg_title'>【示例商品】Apple IphoneX</text>
-            <text class='spec'>2个规格可选</text>
-            <view class='prise_box'>
-              <text class='RMB'>￥</text><text class='prise'>8888</text>
-            </view>
-            <text class="iconfont icon-jiaru"></text> 
-          </view>
-      </view>
-      <view class='list_content'>
-          <view class='images_content'>
-            <image mode="aspectFit" src='/images/iphoneX.png'></image>
-          </view>
-          <view class='msg_content'>
-            <text class='msg_title'>【示例商品】Apple IphoneX</text>
-            <text class='spec'>2个规格可选</text>
-            <view class='prise_box'>
-              <text class='RMB'>￥</text><text class='prise'>8888</text>
-            </view>
-            <text class="iconfont icon-jiaru"></text> 
-          </view>
-      </view>
-      <view class='list_content'>
-          <view class='images_content'>
-            <image mode="aspectFit" src='/images/iphoneX.png'></image>
-          </view>
-          <view class='msg_content'>
-            <text class='msg_title'>【示例商品】Apple IphoneX</text>
-            <text class='spec'>2个规格可选</text>
-            <view class='prise_box'>
-              <text class='RMB'>￥</text><text class='prise'>8888</text>
-            </view>
-            <text class="iconfont icon-jiaru"></text> 
-          </view>
-      </view>
-    </view>
-
+     </block>  
+     <view class='loadmore'>
+     <icon type="waiting" size="15"/>
+      加载更多...  
+     </view>
+    </scroll-view>
+   
+    
 
 </view>

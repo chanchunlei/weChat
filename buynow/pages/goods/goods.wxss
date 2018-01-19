@@ -4,7 +4,6 @@
 .icon-down-trangle-copy-copy-copy:before { content: "\e7fe"; }
 .icon-down-trangle-copy-copy:before { content: "\e604"; }
 .icon-sanjiaoxing:before { content: "\e622"; }
-.icon-jiaru:before { content: "\e62b"; }
 
 
 .container{
@@ -80,9 +79,15 @@
   right: 33rpx;
   font-size: 25rpx;
 }
-
-/*弹框  */
-.more_model,.screen_model{
+/*选中字体  */
+.active{
+  color: #219cf9;
+}
+.sanjiao{
+  color: #696969;
+}
+/*筛选弹框  */
+.screen_model{
   position: absolute;
   width: 100%;
   line-height: 100rpx;
@@ -91,16 +96,6 @@
   background-color: #fff;
   border-top: 3rpx solid #cccccc;
 }
-.more_model>text{
-  display: block;
-  text-align: center;
-  width: 100%;
-  font-size: 35rpx;
-  color:#999;
-  line-height: 100rpx;
-}
-
-/*筛选弹框  */
 
 .screen_model>form{
   display: block;
@@ -184,8 +179,7 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
 /*list  */
 .list_box{
    width: 100%;
-   margin-top: 17rpx;
-   background-color: #fff;
+   height: 100%;
  }
 .list_content{
    width: 100%;
@@ -194,6 +188,8 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
    justify-content: space-around;
    padding: 25rpx 0;
    box-sizing: border-box;
+   background-color: #fff;
+   margin: 15rpx 0;
  }
  .images_content{
    width: 30%;
@@ -206,9 +202,10 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
  }
  .msg_content{
    width: 65%;
+   padding-right: 15rpx;
+   box-sizing: border-box;
    font-size: 14px;
    position: relative;
-   border-bottom: 3rpx solid #e9e9e9;
  }
  .msg_title{
    display: block;
@@ -216,23 +213,24 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
    font-weight: 700;
    color: #676767;
    width: 100%;
-   height: 50rpx;
+   height: 100rpx;
    line-height: 50rpx;
-   overflow: hidden;
-   text-overflow:ellipsis;
-   white-space:nowrap;
- }
- .spec{
-   font-size: 25rpx;
-   color: #979797;
-   height: 80rpx;
-   line-height: 40rpx;
-   width: 100%;
    overflow: hidden;
    text-overflow:ellipsis;
    display: -webkit-box;
    -webkit-line-clamp: 2;
    -webkit-box-orient: vertical;
+ }
+ .spec{
+   display: block;
+   font-size: 25rpx;
+   color: #979797;
+   height: 40rpx;
+   line-height: 40rpx;
+   width: 100%;
+   overflow: hidden;
+   text-overflow:ellipsis;
+   white-space: nowrap;
  }
  .prise_box{
    position: absolute;
@@ -257,5 +255,11 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
    font-weight: 550;
    color: #ff3626;
  }
-
+.loadmore{
+   text-align: center;
+   font-size: 35rpx;
+   color: #999;
+   background-color: #eeeeee;
+   padding: 20rpx 0;
+}
 

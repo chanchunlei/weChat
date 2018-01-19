@@ -19,6 +19,7 @@ Page({
     chooseP: '北京市',
     chooseC: '东城区',
     chooseA: '',
+    focus: false,
     numbers: 0
   },
   formSubmit: function (e) {
@@ -78,11 +79,13 @@ Page({
     });
   },
   showModel: function () {
+    wx.hideKeyboard()
     //省默认渲染，点击后Model显示，默认选取北京市全部渲染
     var num = this.data.allprovince[0].cidx;
     var city = this.data.allcity.slice(num[0], num[1]+1);
-    var isFalse = !this.data.isFalse
-    this.setData({city, isFalse});
+    var isFalse = true;
+    var area = [];
+    this.setData({city, isFalse, area});
   },
   bindChange: function (e) {//三级联动滚动
     

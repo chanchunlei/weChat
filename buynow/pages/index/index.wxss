@@ -1,7 +1,6 @@
 
 /*链接外部字体库  */
 .icon-dianzan:before { content: "\e603"; }
-.icon-jiaru:before { content: "\e62b"; }
 
 
 .page__bd{
