@@ -1,0 +1,50 @@
+.container{
+  padding: 0 45rpx;
+  box-sizing: border-box;
+}
+
+.logos{
+  width: 150rpx;
+  height: 150rpx;
+  margin: 0 auto;
+  padding-top: 80rpx;
+}
+.logos>image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.form_box{
+  width: 100%;
+  margin: 50rpx 0;
+}
+.inp_box{
+  width: 100%;
+  padding: 40rpx;
+  box-sizing: border-box;
+  background-color: #f5f5f5; 
+  font-size: 35rpx;
+  color: #666666;
+  border: 1px solid #eee;
+  border-top: 0;
+  border-radius: 5px;
+}
+.inp_box>label>input{
+  width: 100%;
+  background-color: #fcfcfc;
+	box-shadow: 0px 3px 2px 0px 
+		rgba(255, 255, 255, 0.75), 
+		inset 0px 2px 3px 0px 
+		rgba(0, 0, 0, 0.15);
+	border-radius: 5px;
+  margin: 15rpx 0;
+}
+.btn{
+  margin-top: 50rpx;
+}
+.btn>button{
+  font-size: 38rpx;
+  color: #fff;
+  width: 100%;
+  background-color: #219fea; 
+}
+

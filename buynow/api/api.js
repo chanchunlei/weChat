@@ -1,6 +1,7 @@
 
 //API接口文件
-const url = 'http://192.168.81.41/'
+const url = 'http://192.168.81.39/'
+const logins = 'http://localhost/WeChatLogin/Wlogin.php'
 const wxRequest = (params, url) => {
   wx.showToast({
     title: '加载中...',
@@ -12,12 +13,10 @@ const wxRequest = (params, url) => {
     header: {
       'content-type': 'application/json'
     },
-    method: 'POST',
+    method: 'GET',
     success: function (res) {
-      //console.log(res.data)
       params.success && params.success(res)
       wx.hideToast()
-      // console.log(params.success)
       
     },
     fail: function (e) {
@@ -42,11 +41,15 @@ const getPromotionGoods = (params) => {//促销商品分页接口
 const getScreenGoods = (params) => { //价格和分类筛选接口
   wxRequest(params, url + 'websougoods')
 } 
+const getLogin = (params) => { //价格和分类筛选接口
+  wxRequest(params, logins)
+} 
 module.exports = {//模块化接口
   getList,
   getAll,
   getPriseSort,
   getPromotionGoods,
-  getScreenGoods
+  getScreenGoods,
+  getLogin
 }
 

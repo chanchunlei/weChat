@@ -1,4 +1,5 @@
 //app.js
+import api from 'api/api.js'
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -10,7 +11,24 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        if(res.code){
+          wx.request({
+            url: 'http://localhost/WeChatLogin/login.php',
+            data: {
+              code: res.code
+            },
+            success: function (res) {
+              // this.globalData.userId = res.data.openid;
+              console.log(res);
+            }
+          })
+        } else {
+          console.log('获取用户登录态失败！' + res.errMsg)
+        }
+        
+        //console.log(res.code)
       }
+      
     })
     // 获取用户信息
     wx.getSetting({

@@ -27,24 +27,31 @@
     <view class='screen_model'>
       <form bindsubmit="formSubmit" bindreset="formReset">
        <view class='check_box'>
-        <checkbox-group name="checkbox">
+        <checkbox-group bindchange="checkboxChange"  name="checkbox">
           <label class="checkbox">
-              <text>仅看促销商品</text><checkbox value=""/>
+              <text>种类</text><checkbox checked="{{brand}}" value="0"/>
           </label>
           <label class="checkbox">
-              <text>仅看有货商品</text><checkbox value=""/>
-          </label>
-          <view class='title_middle'>标签</view>
-          <label class="check_border checkbox">
-              <text>新品上架</text><checkbox value=""/>
-          </label>
-          <label class="check_border checkbox">
-              <text>热卖推荐</text><checkbox value=""/>
-          </label>
-          <label class="check_border checkbox">
-              <text>清仓优惠</text><checkbox value=""/>
+              <text>价格</text><checkbox checked="{{inps_price}}" value="1"/>
           </label>
         </checkbox-group>
+        <!--联动显示  -->
+         <view class='title_middle'>标签</view>
+         <block wx:if="{{brand}}">
+          <view class='types'>
+            <text>手机</text>
+            <text>服装</text>
+            <text>手机</text>
+            <text>服装</text>
+          </view>
+         </block>
+         <block wx:if="{{inps_price}}">
+          <view class='inp_price'>
+            <view class='inp_box'><input placeholder-class='placeholders' type='digit' placeholder='输入初始价格'/></view>
+              到
+            <view class='inp_box'><input placeholder-class='placeholders' type='digit' placeholder='输入结束价格'/></view>
+          </view>
+         </block>
        </view> 
        <view class="btn-area">
           <button formType="reset">重置</button>
@@ -58,10 +65,10 @@
        <view bindtap='HideAll' class='model_black'></view>
     </block>
     <!--list  -->
-    <scroll-view bindscrolltolower="loadMore" scroll-y lower-threshold='10' class='list_box'>
+    <scroll-view bindscrolltolower="loadMore" data-scrollid='{{listid}}' scroll-y lower-threshold='10' class='list_box'>
        <!--连接数据后循环渲染  -->
      <block wx:for="{{goodslist}}" wx:key="{{item.gid}}">
-      <view bindtap='' class='list_content' bindtap='showDetail'>
+      <view class='list_content' bindtap='showDetail'>
           <view class='images_content'>
             <image mode="aspectFit" src='{{item.g_pic}}'></image>
           </view>
