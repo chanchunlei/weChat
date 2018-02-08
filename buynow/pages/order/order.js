@@ -1,11 +1,12 @@
-// pages/order/order.js
+import api from '../../api/api.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isFalse: false
+    isFalse: false,
+    orderlist:[]
   },
   payment: function () {
     wx.navigateTo({
@@ -32,7 +33,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    api.getorder({
+      success: res =>{
+        console.log(res)
+        if(res.data.status){
+          let orderlist = res.data.data;
+          this.setData({ orderlist })
+        }
+      }
+    })
   },
 
   /**

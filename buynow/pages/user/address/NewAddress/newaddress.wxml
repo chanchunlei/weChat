@@ -10,21 +10,21 @@
       <view class='expert'>
         <text>联系人：</text>
         <view class='inp_box'>
-          <input name='linkman' class='inps' type='text' value='' placeholder='姓名' placeholder-class='font_style'></input>
+          <input name='recipients' class='inps' type='text' value='{{list.recipients}}' placeholder='姓名' placeholder-class='font_style'></input>
         </view>
         
       </view>
       <view class='expert'>
         <text>联系方式：</text>
         <view class='inp_box'>
-          <input name='phone' class='inps' type='number' value='' placeholder='电话号码' placeholder-class='font_style'></input>
+          <input name='add_phone' class='inps' type='number' value='{{list.add_phone}}' placeholder='电话号码' placeholder-class='font_style'></input>
         </view>
         
       </view>
       <view class='expert'>
         <text>省/市/区：</text>
         <view class='inp_box_city'>
-          <input bindtap='showModel' name='city' class='inps_address' type='text' value='{{areaSelectedStr}}' placeholder='选择省市区' placeholder-class='font_style' focus='{{focus}}'></input>
+          <input bindtap='showModel' name='area' class='inps_address' type='text' disabled value='{{areaSelectedStr}}' placeholder='选择省市区' placeholder-class='font_style'></input>
         </view>
         <text bindtap='fetchPOI' class='auto'>自动选择</text>
       </view>
@@ -32,12 +32,12 @@
       <view class='expert'>
         <text>详细信息：</text>
         <view class='inp_box'>
-          <input name='address' class='inps' type='text' value='' placeholder='请输入' placeholder-class='font_style'></input>
+          <input name='address' class='inps' type='text' value='{{minute}}' placeholder='请输入' placeholder-class='font_style'></input>
         </view>
       </view>
       <view class='expert flex_dif'>
         <text class='tolerate'>设为默认地址</text>
-        <checkbox-group name='checkbox'><checkbox/></checkbox-group>
+        <checkbox-group name='acquiescence'><checkbox checked='{{checkOn}}' value="1"/></checkbox-group>
       </view>
     </view>
    

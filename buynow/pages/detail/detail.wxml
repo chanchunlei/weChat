@@ -9,31 +9,36 @@
   </swiper>
   <!--商品信息  -->
   <view class='goods_detail'>
-    <text class='title_goods'>【示例商品】Apple IphoneX</text>
+    <text class='title_goods'>{{goods[0].g_name}}</text>
     <view class='norms'>
-      <text>颜色：暗灰</text>
-      <text>存储容量：64G</text>
+      <text>{{goods[0].introduction}}</text>
     </view>
-    <view class='price'><text>￥</text><text>8888</text></view>
-    <text class='market_price'>市场价：9999</text>
-    <view class='colors'><text class='active'>暗灰色</text><text>玫瑰金</text></view>
-    <text class='unit'>单位</text>
+    <view class='price'><text>￥</text><text>{{Money}}</text></view>
+    <text class='market_price'>颜色</text>
+    <view class='colors'>
+      <block wx:for="{{color}}" wx:key="{{item.p_id}}">
+        <text bindtap='showColor' data-index='{{index}}' data-color='{{item.p_id}}' class='{{item.classname}}'>{{item.color}}</text>
+      </block>
+    </view>
+    <text class='unit'>规格</text>
     <view class='spec'>
-       <text class='on'>台</text>
+     <block wx:for="{{spec}}" wx:key="{{item}}">
+       <text bindtap='showSpec' data-index='{{index}}' data-spec='{{item.spec}}' class='{{item.classname}}'>{{item.spec}}</text>
+     </block>  
     </view>
-    <checkbox-group bindchange="checkboxChange">
+    <!-- <checkbox-group bindchange="checkboxChange">
       <label class="checkbox">
         <checkbox value="1"/>启用多选
       </label>
-    </checkbox-group>
+    </checkbox-group> -->
     <text class='buynum'>订购数量</text>
     <view class="stepper">
       <!-- 减号 -->
-      <text class="{{minusStatuses[index]}}" data-index="{{index}}" bindtap="bindMinus">-</text>
+      <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
       <!-- 数值 -->
-      <input type="number" bindchange="bindManual" value="1" />
+      <input type="number" bindchange="bindManual" disabled value="{{g_num}}" />
       <!-- 加号 -->
-      <text class="normal" data-index="{{index}}" bindtap="bindPlus">+</text>
+      <text class="{{minusStatuses}}" bindtap="bindPlus">+</text>
     </view>
   </view>
   <!-- 选项卡 -->
@@ -55,7 +60,6 @@
     </view>
     <!--加入购物车  -->
     <view class='join'>
-      <view><text class='iconfont icon-shoucang icon-shoucang1'></text></view>
-      <view class='shopcar'>加入购物车</view>
+      <view bindtap='joinShopcar' class='shopcar'>加入购物车</view>
     </view>
 </view>

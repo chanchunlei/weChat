@@ -34,7 +34,7 @@
        <!--连接数据后循环渲染  -->
        <!--热销效果  -->
          <block wx:for="{{hotlist}}" wx:key="{{item.coderight}}" wx:if="{{isTrue}}">
-          <view class='list_content' bindtap='showDetail'>
+          <view class='list_content' bindtap='showDetail' data-gid='{{item.id}}'>
               <view class='images_content'>
                 <image mode="aspectFit" src='{{item.src}}'></image>
               </view>
@@ -48,8 +48,8 @@
           </view>
          </block>
          <!--分类数据  -->
-         <block wx:for="{{goodslist}}" wx:key="{{item.coderight}}" wx:if="{{!isTrue}}">
-          <view class='list_content' wx:if="{{item.coderight==objectId}}" bindtap='showDetail'>
+         <block wx:for="{{rightList}}" wx:key="{{item.coderight}}" wx:if="{{isFalse}}">
+          <view class='list_content' data-gid='{{item.id}}' bindtap='showDetail'>
               <view class='images_content'>
                 <image mode="aspectFit" src='{{item.src}}'></image>
               </view>

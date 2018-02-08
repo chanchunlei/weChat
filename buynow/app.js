@@ -1,57 +1,73 @@
 //app.js
 import api from 'api/api.js'
 App({
-  onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    // 登录
-    wx.login({
+  logins: function() {
+    wx.getUserInfo({
       success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        if(res.code){
-          wx.request({
-            url: 'http://localhost/WeChatLogin/login.php',
-            data: {
-              code: res.code
-            },
-            success: function (res) {
-              // this.globalData.userId = res.data.openid;
-              console.log(res);
+        wx.login({
+          success: res => {
+            var that = this;
+            // console.log(res.code)
+            // 发送 res.code 到后台换取 openId, sessionKey, unionId
+            if (res.code) {
+              wx.request({
+                url: 'https://www.qqlong.top/webxiaoweixinlogin',
+                data: {
+                  code: res.code,
+                  headimgurl: that.globalData.userInfo.avatarUrl,
+                  nickname: that.globalData.userInfo.nickName
+                },
+                header: {
+                  'content-type': 'application/x-www-form-urlencoded'
+                },
+                method: 'POST',
+                success: function (res) {
+                  if (res.data.token) {
+                    wx.setStorage({
+                      key: "token",
+                      data: res.data.token
+                    })
+                    wx.switchTab({
+                      url: '/pages/index/index'
+                    })
+                  }
+                },
+                fail: function () {
+                  console.log(1)
+                }
+              })
+            } else {
+              console.log('获取用户登录态失败！' + res.errMsg)
             }
-          })
-        } else {
-          console.log('获取用户登录态失败！' + res.errMsg)
-        }
-        
-        //console.log(res.code)
-      }
-      
-    })
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
-            }
-          })
+          }
+        })
+        //console.log(res)
+        // 可以将 res 发送给后台解码出 unionId
+        this.globalData.userInfo = res.userInfo
+        // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+        // 所以此处加入 callback 以防止这种情况
+        if (this.userInfoReadyCallback) {
+          this.userInfoReadyCallback(res)
         }
       }
     })
   },
+  onLaunch: function () {
+    this.logins()
+  },
+ onShow: function(){
+   var that = this;
+   wx.getSetting({
+     success(res) {
+       if (!res.authSetting['scope.userInfo']) {
+         console.log(1)
+         that.logins()
+       }
+     }
+   })
+ },
   globalData: {
     userInfo: null
   }
+  
 })

@@ -1,4 +1,4 @@
-<view class="container">
+<view style='{{styles}}' class="container">
   <!--搜索  -->
   <view class="page__bd">
     <view class='logo'><image mode="aspectFill" src='/images/logo.png'></image></view>
@@ -39,17 +39,16 @@
          <view class='title_middle'>标签</view>
          <block wx:if="{{brand}}">
           <view class='types'>
-            <text>手机</text>
-            <text>服装</text>
-            <text>手机</text>
-            <text>服装</text>
+           <block wx:for="{{cate}}" wx:for-index="idx" wx:key="{{item.cid}}">
+            <text class='{{item.classname}}' data-index="{{idx}}" bindtap='getCid' data-cid="{{item.cid}}">{{item.index}}{{item.cate_name}}</text>
+            </block>
           </view>
          </block>
          <block wx:if="{{inps_price}}">
           <view class='inp_price'>
-            <view class='inp_box'><input placeholder-class='placeholders' type='digit' placeholder='输入初始价格'/></view>
+            <view class='inp_box'><input name="p_start" placeholder-class='placeholders' type='digit' placeholder='输入初始价格'/></view>
               到
-            <view class='inp_box'><input placeholder-class='placeholders' type='digit' placeholder='输入结束价格'/></view>
+            <view class='inp_box'><input name="p_end" placeholder-class='placeholders' type='digit' placeholder='输入结束价格'/></view>
           </view>
          </block>
        </view> 
@@ -62,13 +61,13 @@
   </block>
     <!--蒙层  -->
     <block wx:if="{{isFalse}}">
-       <view bindtap='HideAll' class='model_black'></view>
+       <view class='model_black'></view>
     </block>
     <!--list  -->
     <scroll-view bindscrolltolower="loadMore" data-scrollid='{{listid}}' scroll-y lower-threshold='10' class='list_box'>
        <!--连接数据后循环渲染  -->
      <block wx:for="{{goodslist}}" wx:key="{{item.gid}}">
-      <view class='list_content' bindtap='showDetail'>
+      <view class='list_content' data-gid='{{item.gid}}' bindtap='showDetail'>
           <view class='images_content'>
             <image mode="aspectFit" src='{{item.g_pic}}'></image>
           </view>
@@ -82,8 +81,8 @@
       </view>
      </block>  
      <view class='loadmore'>
-     <icon type="waiting" size="15"/>
-      加载更多...  
+     <icon type="{{lodding.icon}}" size="15"/>
+      {{lodding.concent}}
      </view>
     </scroll-view>
    

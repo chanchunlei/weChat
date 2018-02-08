@@ -3,6 +3,9 @@
 page {
    background-color: #eeeeee;
 } 
+.shop_box{
+  margin-bottom: 135rpx;
+}
 /*checkbox  */
 .shopcar{
   width: 100%;
@@ -59,46 +62,65 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
 .msg_box{
   width: 65%;
   height: 240rpx;
+  padding-right: 60rpx;
+  box-sizing: border-box;
   position: relative;
 }
-.msg_box>view>text{
+.msg_box>view>.icon-shanchu{
   display: block;
+  font-size: 38rpx;
 }
 .msg_title{
   font-size: 35rpx;
   font-weight: 700;
   color: #676767;
   width: 100%;
-  height: 50rpx;
-  white-space:nowrap;
+  height: 100rpx;
+  line-height: 50rpx;
   overflow: hidden;
   text-overflow:ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all; 
 }
 .spec{
+  display: block;
+  font-size: 28rpx;
+  color: #979797;
+  height: 40rpx;
+  line-height: 40rpx;
   width: 100%;
-  font-size: 27rpx;
-  color: #959595;
-  padding: 5rpx 0;
-  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
 .prise_box{
-   width: 100%;
    height: 45rpx;
    line-height: 45rpx;
+   position: absolute;
+   bottom: 10rpx;
+   left: 0;
  }
  .RMB{
-   font-size: 25rpx;
+   font-size: 30rpx;
    font-weight: 700;
    color: #ff7910;
  }
  .prise{
-   font-size: 35rpx;
+   font-size: 40rpx;
    font-weight: 700;
    color: #ff7910;
  }
  .changeNum{
    display: flex;
    justify-content: space-between;
+ }
+ /*删除框  */
+ .delete{
+   position: absolute;
+   top: 10rpx;
+   right: 10rpx;
  }
 /*加减框  */
 .stepper {
@@ -107,10 +129,13 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
 	width: 166rpx;
 	height: 50rpx;
   margin-top: 15rpx;
+  position: absolute;
+  bottom: 10rpx;
+  right: 50rpx;
 }
 .stepper text {
 	width: 50rpx;
-	line-height: 50rpx;
+	line-height: 47rpx;
 	text-align: center;
 	float: left;
 }
@@ -149,11 +174,14 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
   border-top: 1rpx solid #bebebe;
 }
 .all_goods{
-  font-size: 27rpx;
-  color: #b5b5b5;
+  font-size: 30rpx;
+  color: #666;
   text-align: center;
   float: left;
-  width: 25%;
+  width: 20%;
+}
+.all_goods label{
+  margin-right: 10rpx;
 }
 .all_money{
   width: 50%;

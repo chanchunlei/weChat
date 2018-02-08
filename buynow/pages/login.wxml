@@ -19,4 +19,6 @@
        </view>
      </form>
   </view>
+  <!--状态  -->
+  <view class='animation_box {{classname}}'><text class='animation'>{{login_state}}</text></view>
 </view>

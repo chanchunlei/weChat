@@ -5,6 +5,11 @@ page{
   background-color: #fff;
   padding: 0 35rpx;
   box-sizing: border-box;
+  margin-bottom: 15rpx;
+}
+.ad_bigbox{
+  width: 100%;
+  margin-bottom: 100rpx;
 }
 .address_name{
   padding: 30rpx 0;

@@ -10,6 +10,16 @@ Page({
      inps_price: false,
      brand: false,
      goodslist:[],
+     cate:[],
+     lodding: {
+       icon:'waiting',
+       concent: "加载更多..."
+     },
+     cid: "",
+     section:{
+       p_start: "",
+       p_end: "",
+     },
      listid: 0,
      classname: {
        all: "active",
@@ -24,69 +34,116 @@ Page({
        delta2: ""
      }
   },
-  // 跳转到搜索页
-  showInput: function () {
+  typeC:function () {
+    var lodding = this.data.lodding;
+    lodding.icon = 'info';
+    lodding.concent = '没有更多内容了！';
+    this.setData({ lodding })
+  },
+  showInput: function () {// 跳转到搜索页
     wx.navigateTo({
       url: '../search/secrch',
     })
   },
   // 选框
   checkboxChange: function (e) {
-    console.log('checkbox发生change事件，携带value值为：', e.detail.value)
-    var dis1 = e.detail.value.indexOf('0');
-    var dis2 = e.detail.value.indexOf('1');
+    //console.log('checkbox发生change事件，携带value值为：', e.detail.value)
+    if(e.type=="reset"){
+      var dis1 = -1;
+      var dis2 = -1;
+    }else{
+      var dis1 = e.detail.value.indexOf('0');
+      var dis2 = e.detail.value.indexOf('1');
+    }
     if(dis1>=0){
       var brand = true;
       this.setData({ brand });
     } else {
       var brand = false;
-      this.setData({ brand });
+      var cid = '';
+      var cate = this.data.cate;
+      for (var i = 0; i < cate.length; i++) {
+        cate[i]['classname'] = "";
+      }
+      this.setData({ brand, cid, cate });
     }
     if (dis2 >= 0){
       var inps_price = true;
       this.setData({ inps_price });
     } else {
+      var section = { p_start: "",p_end: ""};
       var inps_price = false;
-      this.setData({ inps_price });
+      this.setData({ inps_price, section });
     }
   },
-  formSubmit: function (e, Pages) {
-    console.log('form发生了submit事件，携带数据为：', e.detail.value);
-    api.getScreenGoods({
-      query: {
-        page: Pages,
-        cate: 0,
-        p_start: 456,
-        p_end: 477
-      },
-      success: (res) => {
-        var arr = that.data.goodslist
-        if (res.data.page == 0) {//判断页码，若不是0则加上之前数据
-          var goodslist = res.data.data;
-          var Pages = Number(res.data.page);
-        } else {
-          var goodslist = arr.concat(res.data.data);
-          var Pages = Number(res.data.page);
+  //获取种类选中
+  getCid: function (e) {
+    //console.log(this.data.cate)
+     var idx = e.currentTarget.dataset.index;
+     var cid = e.currentTarget.dataset.cid;
+     var cate = this.data.cate;
+     //console.log(cate)
+     for(var i=0; i<cate.length;i++){
+       cate[i]['classname'] = "";
+     }
+     cate[idx]['classname'] = "cate_active";
+     this.setData({ cid, cate})
+  },
+  formSubmit: function (e, Pages) {//筛选提交
+      var that = this;
+      var cid = that.data.cid
+      if (e.detail){
+        if (e.detail.value.p_start) {
+          section['p_start'] = e.detail.value.p_start;
+          that.setData({ section })
         }
-        console.log(res.data);
-        that.setData({ goodslist, Pages })
+        if (e.detail.value.p_start) {
+          section["p_end"] = e.detail.value.p_end;
+          that.setData({ section })
+        }
       }
-    })
+      if (!Pages) { Pages = 0 };
+      api.getScreenGoods({
+        query: {
+          page: Pages,
+          cate: that.data.cid,
+          p_start: that.data.section.p_start,
+          p_end: that.data.section.p_end
+        },
+        success: (res) => {
+          var arr = that.data.goodslist
+          if (res.data.status) {
+            if (res.data.page == 0) {//判断页码，若不是0则加上之前数据
+              var goodslist = res.data.data;
+              var Pages = Number(res.data.page);
+            } else {
+              var goodslist = arr.concat(res.data.data);
+              var Pages = Number(res.data.page);
+            }
+          }else{
+            var goodslist = that.data.goodslist;
+            var Pages = that.data.Pages;
+          }
+          that.setData({ goodslist, Pages })
+        }
+      })
+      that.HideAll();
   },
   formReset: function (e) {
     this.checkboxChange(e);
   },
   // 跳转到详细页
-  showDetail: function () {
+  showDetail: function (e) {
+    var gid = e.currentTarget.dataset.gid;
     wx.navigateTo({
-      url: '../detail/detail',
+      url: '../detail/detail?gid=' + gid,
     })
   },
- 
   onLoad: function (options) {
     this.showAll();
   },
   showAll: function (nums,Pages) {//综合
+    if (!Pages) { Pages = 0 };
     var classname = { all: "active",price: "",sales: "",screen: ""};
     var on = { delta1: "", delta2: "" };
     var listid = 0;//滚动监听下标
@@ -96,21 +153,29 @@ Page({
         page: Pages
       },
       success: (res) => {
-        var arr = that.data.goodslist
-        if (res.data.page == 0) {//判断页码，若不是0则加上之前数据
-          var goodslist = res.data.data;
-          var Pages = Number(res.data.page);
-        } else {
-          var goodslist = arr.concat(res.data.data);
-          var Pages = Number(res.data.page);
+        if(res.data.status){
+          var cate = res.data.cate;
+          var arr = that.data.goodslist
+          if (res.data.page == 0) {//判断页码，若不是0则加上之前数据
+            var goodslist = res.data.data;
+            var Pages = Number(res.data.page);
+          } else {
+            var goodslist = arr.concat(res.data.data);
+            var Pages = Number(res.data.page);
+          }
+        }else{
+          var goodslist = that.data.goodslist;
+          var Pages = that.data.Pages;
+          var cate = that.data.cate;
         }
-        console.log(res.data);
-        that.setData({ goodslist, classname, on, listid, Pages })
+        //console.log(res.data);
+        that.setData({ goodslist, classname, on, listid, Pages, cate})
       }
     })
     that.HideAll();
   },
   showPrice: function (e,Pages) {//价格
+    if (!Pages) { Pages = 0 };
     if(e != this.data.Price){//判断滚动时价格排序规则
       var Price = e.currentTarget.dataset.price
       if (Price == 1) {
@@ -135,12 +200,17 @@ Page({
       },
       success: (res) => {
         var arr = that.data.goodslist
-        if (res.data.page == 0){//判断页码，若不是0则加上之前数据
-          var goodslist = res.data.data;
-          var Pages = Number(res.data.page);
+        if (res.data.status) {
+          if (res.data.page == 0) {//判断页码，若不是0则加上之前数据
+            var goodslist = res.data.data;
+            var Pages = Number(res.data.page);
+          } else {
+            var goodslist = arr.concat(res.data.data);
+            var Pages = Number(res.data.page);
+          }
         }else{
-          var goodslist = arr.concat(res.data.data);
-          var Pages = Number(res.data.page);
+          var goodslist = that.data.goodslist;
+          var Pages = that.data.Pages;
         }
         that.setData({ goodslist, classname, on, Price, listid, Pages })
       }
@@ -148,6 +218,7 @@ Page({
     that.HideAll();
   },
   showMore: function (nums,Pages) {  //促销
+    if (!Pages) { Pages = 0 };
     var classname = { all: "", price: "", sales: "active", screen: "" };
     var that = this;
     var listid = 2;
@@ -157,13 +228,19 @@ Page({
       },
       success: (res) => {
         var arr = that.data.goodslist
-        if (res.data.page == 0) {//判断页码，若不是0则加上之前数据
-          var goodslist = res.data.data;
-          var Pages = Number(res.data.page);
-        } else {
-          var goodslist = arr.concat(res.data.data);
-          var Pages = Number(res.data.page);
+        if (res.data.status) {
+          if (res.data.page == 0) {//判断页码，若不是0则加上之前数据
+            var goodslist = res.data.data;
+            var Pages = Number(res.data.page);
+          } else {
+            var goodslist = arr.concat(res.data.data);
+            var Pages = Number(res.data.page);
+          }
+        }else{
+          var goodslist = that.data.goodslist;
+          var Pages = that.data.Pages;
         }
+        
         that.setData({ goodslist, classname, listid, Pages })
       }
     })
@@ -173,30 +250,33 @@ Page({
     var classname = { all: "", price: "", sales: "", screen: "active" };
     var on = { delta1: "", delta2: "" };
     var listid = 3;
-    var isFalse = !this.data.ScreenFalse;
-    var ScreenFalse = !this.data.ScreenFalse;
-    this.setData({ isFalse, ScreenFalse, classname, on, listid });
+    var isFalse = true;
+    var ScreenFalse = true;
+    var styles = 'overflow:hidden';
+    this.setData({ isFalse, ScreenFalse, classname, on, listid, styles });
   },
   HideAll: function () {//隐藏弹窗
     var isFalse = false;
     var ScreenFalse = false;
+    var styles = '';
     this.setData({
-      isFalse, ScreenFalse
+      isFalse, ScreenFalse, styles
     });
   },
   loadMore: function (e) {//加载更多
     // console.log(e.currentTarget.dataset)
     var nums = e.currentTarget.dataset.scrollid;
-    var e = this.data.Price;//接收到当前价格排序规则
     var Pages = this.data.Pages + 1;
     if (nums == 0){
       this.showAll(nums,Pages);
     } else if (nums == 1){
+      var e = this.data.Price;//接收到当前价格排序规则
       this.showPrice(e, Pages);
     } else if (nums == 2){
       this.showMore(nums,Pages);
     } else if (nums == 3){
-      this.formSubmit(e, Pages);
+      var e = this.data.section;//接收到当前价格排序规则
+      this.formSubmit(e,Pages);
     }
   }
 })

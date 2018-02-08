@@ -1,6 +1,3 @@
-/*引用小图标  */
-.icon-shoucang:before { content: "\e626"; font-size: 70rpx; color: #666;}
-.icon-shoucang1:before { content: "\e675"; font-size: 70rpx; color: #219dfa;}
 
 page{
   background-color: #eeeeee;
@@ -166,14 +163,13 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
 .stepper .normal{
 	color: black;
 }
-
 /*禁用样式*/
 .stepper .disabled{
 	color: #ccc;
 }
 /*选项卡  */
 .page__bd{
-    padding-bottom: 0;
+    padding-bottom: 120rpx;
     margin-top: 15rpx;
     background-color: #fff;
 }
@@ -201,13 +197,11 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
   z-index: 501;
   display: flex;
   justify-content: space-between;
-  padding-left: 35rpx;
-  box-sizing: border-box;
-  height: 130rpx;
-  line-height: 130rpx;
+  height: 120rpx;
+  line-height: 120rpx;
 }
 .shopcar{
-  width: 40%;
+  width: 100%;
   text-align: center;
   background-color: #219dfa;
   color: #fff;
